@@ -1,5 +1,4 @@
-<div class="listar">
-  <mat-card class="example-card" *ngFor="let persona of personas" >
+<mat-card class="example-card" >
     <mat-card-header>
      
       <mat-card-title><span class="info">user: </span>{{persona.user}}</mat-card-title>
@@ -15,7 +14,8 @@
       <mat-card-subtitle><span class="info">created_Date </span>{{persona.created_Date}}</mat-card-subtitle>
       <mat-card-subtitle><span class="info">termination_Date </span>{{persona.termination_Date}}</mat-card-subtitle>
     </mat-card-content>
+    <div class="actions">
+      <button mat-stroked-button>Actualizar</button>
+      <button mat-stroked-button color="warn" (click)="borrarPersona(persona)" >borrar</button>
+    </div>
   </mat-card>
-  
-
-</div>

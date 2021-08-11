@@ -4,15 +4,19 @@
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
-    padding: 15vh;
+    
     z-index: 1;
 }
 .example-card {
     max-width: 250px;
-    margin: 3vh;
+    margin: 2vh;
   }
+
+  .titulo{
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    padding-top: 10vh;
   
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
+    z-index: 1;
   }

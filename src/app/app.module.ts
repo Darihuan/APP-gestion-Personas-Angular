@@ -13,15 +13,16 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NuevaPersonaComponent } from './nueva-persona/nueva-persona.component';
+import { NuevaPersonaComponent } from './Persona/nueva-persona/nueva-persona.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { PrincipalComponent } from './principal/principal.component';
-import { ListarComponent } from './listar/listar.component';
+import { ListarComponent } from './Persona/listar/listar.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
-
-  
+import {MatDividerModule} from '@angular/material/divider';
+import { TarjetaPersonaComponent } from './Persona/tarjeta-persona/tarjeta-persona.component'
+ 
 
 
 
@@ -32,6 +33,7 @@ import {MatCardModule} from '@angular/material/card';
     NavbarComponent,
     PrincipalComponent,
     ListarComponent,
+    TarjetaPersonaComponent,
  
   ],
   imports: [
@@ -49,7 +51,9 @@ import {MatCardModule} from '@angular/material/card';
     HttpClientModule,
     RouterModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+    MatDividerModule,
+    
 
     
   ],

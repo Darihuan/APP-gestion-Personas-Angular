@@ -3,8 +3,14 @@
     
     
     <div class="contenedor">
-      
+    
         <form  id="formulario" (submit)="submit()" [formGroup]="personaForm">
+            <div *ngIf="router.url==='/actualizar'">
+                <h1>Actualizar Datos Persona:</h1>
+              </div>
+              <div *ngIf="router.url==='/crear'">
+                <h1>Crear Datos Persona:</h1>
+              </div>
             <div class="campo">
                 <label for="user" class="form-label">Nombre de usuario:</label>
                 <input class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user">
@@ -41,7 +47,7 @@
 
             <div class="campo">
                 <label for="active" class="form-label">Active</label>
-                <input class="formulario" type="checkbox" id="active" required formControlName="active">
+                <input class="formulario" type="checkbox" id="active"  formControlName="active">
                 
             </div>
 

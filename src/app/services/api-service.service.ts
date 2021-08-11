@@ -2,8 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { PersonaDTO } from './interfaces/PersonaDTO';
-import { PersonaOutput } from './interfaces/PersonaDTOOutput';
+import { PersonaDTO } from '../interfaces/PersonaDTO';
+import { PersonaOutput } from '../interfaces/PersonaDTOOutput';
 
 @Injectable({
   providedIn: 'root'
@@ -24,7 +24,10 @@ export class ApiServiceService {
     
   }
   getPersonas(){
-    return this.http.get<PersonaOutput[]>(this.api_url+'personas').toPromise().then((respuesta)=>respuesta)
+    return this.http.get<PersonaOutput[]>(this.api_url+'personas').toPromise().then((respuesta)=>respuesta);
 
+  }
+  borrarPersona(id:number){
+    return this.http.delete(this.api_url+"personas/"+id).toPromise().then((borrado)=>console.error(borrado));
   }
 }

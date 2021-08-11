@@ -1,0 +1,12 @@
+<h1 class="titulo">Listado Personas:</h1>
+<div class="listar">
+  
+  <div *ngFor="let persona of personas">
+    <app-tarjeta-persona (borrado)="recibirmensajePersona($event)" [persona]="persona"></app-tarjeta-persona>
+  </div>
+
+ 
+
+  
+
+</div>

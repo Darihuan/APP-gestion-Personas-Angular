@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiServiceService } from '../api-service.service';
-import { PersonaDTO } from '../interfaces/PersonaDTO';
-import { PrincipalComponent } from '../principal/principal.component';
+import { ApiServiceService } from 'src/app/services/api-service.service';
+import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
+
+
 
 @Component({
   selector: 'app-nueva-persona',
@@ -13,7 +14,7 @@ import { PrincipalComponent } from '../principal/principal.component';
 export class NuevaPersonaComponent implements OnInit {
  
 
-  constructor(private formBuilder:FormBuilder,private service:ApiServiceService) { }
+  constructor(private formBuilder:FormBuilder,private service:ApiServiceService,public router:Router) { }
   ngOnInit(): void {
   }
   
