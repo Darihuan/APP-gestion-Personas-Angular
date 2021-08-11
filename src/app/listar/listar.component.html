@@ -1,0 +1,21 @@
+<div class="listar">
+  <mat-card class="example-card" *ngFor="let persona of personas" >
+    <mat-card-header>
+     
+      <mat-card-title><span class="info">user: </span>{{persona.user}}</mat-card-title>
+      <mat-card-subtitle><span class="info">company_email </span>{{persona.company_email}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src={{persona.imagen_url}} alt="Photo of a Shiba Inu">
+    <mat-card-content>
+      <mat-card-subtitle><span class="info">personal_email </span>{{persona.personal_email}}</mat-card-subtitle>
+      <mat-card-subtitle><span class="info">password: </span>{{persona.password}}</mat-card-subtitle>
+      <mat-card-subtitle><span class="info">surname </span>{{persona.surname}}</mat-card-subtitle>
+      <mat-card-subtitle><span class="info">city </span>{{persona.city}}</mat-card-subtitle>
+      <mat-card-subtitle><span class="info">active </span>{{persona.active}}</mat-card-subtitle>
+      <mat-card-subtitle><span class="info">created_Date </span>{{persona.created_Date}}</mat-card-subtitle>
+      <mat-card-subtitle><span class="info">termination_Date </span>{{persona.termination_Date}}</mat-card-subtitle>
+    </mat-card-content>
+  </mat-card>
+  
+
+</div>

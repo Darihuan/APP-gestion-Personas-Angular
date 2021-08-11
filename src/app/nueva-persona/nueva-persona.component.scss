@@ -1,0 +1,66 @@
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    padding: 13vh;
+   
+
+    background: linear-gradient(to right,rgba(gray,0.9),rgba(gray,0.3)),
+    url("https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE2n6Rw?ver=4aa9&q=90&m=6&h=720&w=1280&b=%23FFFFFFFF&f=jpg&o=f&aim=true");
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    align-content: center;
+
+    border-radius: 5px;
+    background: aliceblue;
+
+    margin: 10vh 33vh;
+    width: 33vh;
+
+    font-weight: 400;
+}
+.campo{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;  
+    align-items: center;
+    margin: 0.5vh;
+
+}
+.formulario{
+   
+    text-align: center;
+    color: gray;
+    margin: 1vh;
+    padding: 2vh;
+    border-style: solid;
+    border-radius:5px;
+
+}
+
+
+.boton{
+    
+    
+
+    text-align: center;
+    color: white;
+    background: #A349A4;
+    margin: 5vh;
+    padding:2vh 10vh;
+    border-style: solid;
+    border-radius:5px;
+}
