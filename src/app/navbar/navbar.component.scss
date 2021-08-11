@@ -7,3 +7,16 @@
 .position{
     position: fixed;
 }
+.barra{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    
+}
+.icono{
+    padding: 1.5vh;
+}
+.sidenav{
+    width: 10%;
+    height: 10%;
+}

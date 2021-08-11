@@ -1,7 +1,16 @@
 <mat-toolbar color="primary" class="position">
-    <mat-toolbar-row>
-      <a class="titulo" routerLink="/">CRUD PERSONAS</a>
-      <a mat-raised-button color="primary" routerLink="crear">Crear Nueva persona</a>
-      <a mat-raised-button color="primary" routerLink="listar">Listar Personas</a>
+    <mat-toolbar-row class="barra">
+      <div>
+        <a class="titulo" routerLink="/">CRUD PERSONAS</a>
+        <a mat-raised-button color="primary" routerLink="crear">Crear Nueva persona</a>
+        <a mat-raised-button color="primary" routerLink="listar">Listar Personas</a>
+
+      </div>
+      <div> 
+        <mat-icon matBadge={{service.contadorborrados}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
+      </div>
+ 
+     
     </mat-toolbar-row>
   </mat-toolbar>
+  <app-sidenav  [abrirlateral]="condicion" class="sidenav"></app-sidenav>

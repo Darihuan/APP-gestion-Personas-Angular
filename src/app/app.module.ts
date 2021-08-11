@@ -22,8 +22,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import { TarjetaPersonaComponent } from './Persona/tarjeta-persona/tarjeta-persona.component'
- 
-
+import {MatBadgeModule} from '@angular/material/badge';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { TarjetaPersonaComponent } from './Persona/tarjeta-persona/tarjeta-perso
     PrincipalComponent,
     ListarComponent,
     TarjetaPersonaComponent,
+    SidenavComponent,
  
   ],
   imports: [
@@ -53,7 +55,8 @@ import { TarjetaPersonaComponent } from './Persona/tarjeta-persona/tarjeta-perso
     MatFormFieldModule,
     MatCardModule,
     MatDividerModule,
-    
+    MatBadgeModule,
+    MatSidenavModule
 
     
   ],

@@ -16,7 +16,7 @@ export class ApiServiceService {
   id_persona:number=0;
   personaActualizar:PersonaOutput;
 
-
+  contadorborrados=0;
    crearPersona(persona:PersonaDTO){
 
     return this.http.post(this.api_url+'personas',persona).toPromise().then(
@@ -29,7 +29,7 @@ export class ApiServiceService {
 
   }
   borrarPersona(id:number){
-    return this.http.delete(this.api_url+"personas/"+id).toPromise().then((borrado)=>console.error(borrado));
+    return this.http.delete(this.api_url+"personas/"+id).toPromise().then((borrado)=>this.contadorborrados=this.contadorborrados+1);
   }
   actualizar(persona:PersonaDTO){
     return this.http.put(this.api_url+"personas/actualizar/"+persona.id,persona).toPromise();
