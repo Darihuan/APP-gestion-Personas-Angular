@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ApiServiceService } from '../../services/api-service.service';
 import { PersonaOutput } from '../../interfaces/PersonaDTOOutput';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,22 +11,23 @@ import { PersonaOutput } from '../../interfaces/PersonaDTOOutput';
 })
 export class ListarComponent implements OnInit {
 
-  constructor(private service:ApiServiceService) { }
+  constructor(private service:ApiServiceService,public router:Router) { }
   personas:PersonaOutput[]=[];
+  
+  personaActualizarPadre=undefined;
+ 
   ngOnInit(): void { 
     
     this.service.getPersonas().then(elementos=>elementos
       .forEach(elemento=>this.personas.push(elemento)));
-    console.log(this.personas)
+   
 
   }
   recibirmensajePersona($event){
-
-    
-    
     let arraytemporal=this.personas.filter(elemento=>elemento!=$event)
     this.personas=arraytemporal;
   }
+
   
   
 

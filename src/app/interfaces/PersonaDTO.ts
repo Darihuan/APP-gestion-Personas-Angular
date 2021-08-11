@@ -1,7 +1,8 @@
 export class PersonaDTO{
-    constructor(user:string,password:string,
+    constructor(id:number,user:string,password:string,
         surname: string,company_email:string,personal_email: string,
         city:string, active:boolean,created_Date:Date){
+            this.id=id;
             this.user=user;
             this.password=password;
             this.surname=surname;
@@ -12,6 +13,7 @@ export class PersonaDTO{
             this.created_Date=created_Date;
 
     }
+    id:number
     user:string;
     password:string;
     surname: string;

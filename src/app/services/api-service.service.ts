@@ -14,6 +14,7 @@ export class ApiServiceService {
 
   api_url:string="http://localhost:8080/api/v1/";
   id_persona:number=0;
+  personaActualizar:PersonaOutput;
 
 
    crearPersona(persona:PersonaDTO){
@@ -29,5 +30,9 @@ export class ApiServiceService {
   }
   borrarPersona(id:number){
     return this.http.delete(this.api_url+"personas/"+id).toPromise().then((borrado)=>console.error(borrado));
+  }
+  actualizar(persona:PersonaDTO){
+    return this.http.put(this.api_url+"personas/actualizar/"+persona.id,persona).toPromise();
+
   }
 }

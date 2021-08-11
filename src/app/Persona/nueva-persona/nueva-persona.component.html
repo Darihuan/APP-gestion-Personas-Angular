@@ -4,65 +4,77 @@
     
     <div class="contenedor">
     
-        <form  id="formulario" (submit)="submit()" [formGroup]="personaForm">
+        <form  id="formulario" (submit)="submit()"  [formGroup]="personaForm">
             <div *ngIf="router.url==='/actualizar'">
-                <h1>Actualizar Datos Persona:</h1>
+                <h1 class="botones">Actualizar Datos Persona:</h1>
               </div>
               <div *ngIf="router.url==='/crear'">
-                <h1>Crear Datos Persona:</h1>
+                <h1 class="botones">Crear Persona:</h1>
               </div>
             <div class="campo">
                 <label for="user" class="form-label">Nombre de usuario:</label>
-                <input class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user">
+                <input *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="user" required placeholder={{personaActualizar.user}} value={{personaActualizar.user}} formControlName="user">
+                <input *ngIf="router.url==='/crear'" class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user">
             </div>
 
             <div class="campo">
                  <label for="password" class="form-label">Contraseña:</label>
-                <input  class="formulario" type="password" id="password" required autocomplete="new-password" placeholder="password" formControlName="password">
+                 <input  *ngIf="router.url==='/actualizar'" class="formulario" type="password" id="password" required autocomplete="new-password" placeholder={{personaActualizar.password}} value={{personaActualizar.password}} formControlName="password">
+                <input  *ngIf="router.url==='/crear'"  class="formulario" type="password" id="password" required autocomplete="new-password" placeholder="password" formControlName="password">
             </div>
 
             <div class="campo">
                 <label for="surname" class="form-label">Surname:</label>
-                <input  class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">    
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="surname" required placeholder={{personaActualizar.surname}}  value={{personaActualizar.surname}} formControlName="surname">    
+                <input   *ngIf="router.url==='/crear'" class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">    
             </div>
 
 
             <div class="campo">
                 <label for="company_email" class="form-label">Company email</label>
-                <input class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">    
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="email" id="company_email" required placeholder={{personaActualizar.company_email}} value={{personaActualizar.company_email}} formControlName="company_email">    
+                <input  *ngIf="router.url==='/crear'" class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">    
             </div>
 
 
             <div class="campo">
                 <label for="personal_email" class="form-label">Personal email</label>
-                <input class="formulario"  type="email" id="personal_email" required placeholder="Personal Email" formControlName="personal_email">
+                <input  *ngIf="router.url==='/actualizar'" class="formulario"  type="email" id="personal_email" required placeholder={{personaActualizar.personal_email}} value={{personaActualizar.personal_email}} formControlName="personal_email">
+                <input *ngIf="router.url==='/crear'"  class="formulario"  type="email" id="personal_email" required placeholder="Personal Email" formControlName="personal_email">
             </div>
 
 
             <div class="campo">
                 <label for="city" class="form-label">City        </label>
-                <input class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="city" required placeholder={{personaActualizar.city}} value={{personaActualizar.city}} formControlName="city">           
+                <input  *ngIf="router.url==='/crear'" class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
             </div>
 
 
             <div class="campo">
                 <label for="active" class="form-label">Active</label>
-                <input class="formulario" type="checkbox" id="active"  formControlName="active">
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="checkbox" id="active"  formControlName="active" value={{personaActualizar.active}}>
+                <input  *ngIf="router.url==='/crear'" class="formulario" type="checkbox" id="active"  formControlName="active">
                 
             </div>
 
 
             <div class="campo">
                 <label for="created_Date" class="form-label">created_Date</label>
-                <input class="formulario" type="date" id="created_Date" required formControlName="created_Date">    
+                <input   *ngIf="router.url==='/actualizar'" class="formulario" type="date" id="created_Date" required formControlName="created_Date"  value={{personaActualizar.created_Date}}>    
+                <input  *ngIf="router.url==='/crear'" class="formulario" type="date" id="created_Date" required formControlName="created_Date">    
             </div>
 
-            <button class="boton" type="submit" >Enviar</button>
-     
+            <button *ngIf="router.url==='/crear'" class="boton" type="submit" >Enviar</button>
+            <div class="botones">
+                <button *ngIf="router.url==='/actualizar'" mat-stroked-button (click)="update()">Actualizar</button>
+                <button *ngIf="router.url==='/actualizar'" mat-stroked-button color="warn" (click)="borrarPersona(personaActualizar)" >borrar</button>
+            </div>
+
         </form>
     </div>
 
-    <script src="script.js"></script>
+   
 
 
 </body>

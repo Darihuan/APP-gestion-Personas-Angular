@@ -1,12 +1,17 @@
-<h1 class="titulo">Listado Personas:</h1>
+<h1 class="titulo"  *ngIf="router.url==='/listar'">Listado Personas:</h1>
 <div class="listar">
   
-  <div *ngFor="let persona of personas">
-    <app-tarjeta-persona (borrado)="recibirmensajePersona($event)" [persona]="persona"></app-tarjeta-persona>
+  <div *ngFor="let persona of personas" >
+    <app-tarjeta-persona *ngIf="router.url==='/listar'"
+     (borrado)="recibirmensajePersona($event)"
+      [persona]="persona"></app-tarjeta-persona>
+      
   </div>
-
+ 
  
 
   
 
 </div>
+<app-nueva-persona  *ngIf="router.url==='/actualizar'"></app-nueva-persona>
+

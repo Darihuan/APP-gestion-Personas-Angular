@@ -8,7 +8,7 @@ import { PrincipalComponent } from './principal/principal.component';
 const routes: Routes = [
   {path:"",component:PrincipalComponent},
   {path: "crear", component: NuevaPersonaComponent},
-  {path: "actualizar", component: NuevaPersonaComponent},
+  {path: "actualizar", component: ListarComponent},
   {path:"listar",component:ListarComponent}
  
 ];

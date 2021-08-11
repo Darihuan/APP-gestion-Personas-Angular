@@ -12,23 +12,24 @@ import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
   styleUrls: ['./tarjeta-persona.component.scss']
 })
 export class TarjetaPersonaComponent implements OnInit {
-
+  
   constructor(private service:ApiServiceService) { }
   
   ngOnInit(): void {
   }
   @Input()
   persona:PersonaOutput;
+
   @Output()
    borrado:EventEmitter<PersonaOutput>=new EventEmitter();
-
+  @Output()
+   actualizar:EventEmitter<PersonaOutput>=new EventEmitter();
+   
   borrarPersona(persona){
-
     this.service.borrarPersona(persona.id);
-    this.borrado.emit(persona)
-  
+    this.borrado.emit(persona) }
 
-  }
+  actualizarPersona(persona){ this.service.personaActualizar=persona  }
 
 
 
