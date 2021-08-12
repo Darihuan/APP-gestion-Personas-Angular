@@ -1,28 +1,16 @@
 {
   "personas": [
     {
-      "id": 7,
+      "id": 10,
       "user": "Rick Sanchez ",
       "password": "miusuario",
       "surname": "wooooola",
-      "company_email": "usuari@email.com",
-      "personal_email": "personal@email.com",
+      "company_email": "usuarasdi@email.com",
+      "personal_email": "perssdaonal@email.com",
       "city": "logroño",
       "active": true,
       "created_Date": "2021-08-02",
       "imagen_url": "https://static.wikia.nocookie.net/rickandmorty/images/a/a6/Rick_Sanchez.png/revision/latest/top-crop/width/360/height/360?cb=20160923150728"
-    },
-    {
-      "id": 8,
-      "user": "daniel",
-      "password": "sdasdas",
-      "surname": "gumersindo lopez",
-      "company_email": "damesamarin@gmail.com",
-      "personal_email": "damesamarin@gmail.com",
-      "city": "Logroño",
-      "active": true,
-      "created_Date": "2021-08-11",
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/112.jpeg"
     }
   ]
 }

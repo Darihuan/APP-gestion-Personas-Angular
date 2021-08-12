@@ -67,12 +67,14 @@ export class NuevaPersonaComponent implements OnInit{
     this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
     this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value,this.personaForm.get('imagen_url').value);
     persona=this.imagenpordefecto(persona);
+
     this.service.actualizar(persona).subscribe((actualizar)=>{
       this.service.contador_alertas=this.service.contador_alertas+1;
       this.service.alertas.push(new Alerta("Actualizacion","Persona con id:"+persona.id+" ha sido actualizado"));
-      
-    }).unsubscribe();
+     
+    });
     this.router.navigate(['/listar'])
+    
      
   }
   borrarPersona(persona:PersonaDTO):void{

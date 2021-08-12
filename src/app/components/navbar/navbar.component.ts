@@ -20,6 +20,12 @@ export class NavbarComponent implements OnInit {
   condicion:boolean;
   alerta:Alerta;
 
+  /*funciones*/
+  delete_alert(alerta:Alerta):void{
+    this.service.alertas.splice(this.service.alertas.indexOf(alerta));
+    this.service.contador_alertas--;
+  }
+
 
 
 }
