@@ -13,47 +13,47 @@
               </div>
             <div class="campo">
                 <label for="user" class="form-label">Nombre de usuario:</label>
-                <input *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="user" required placeholder={{personaActualizar.user}} value={{personaActualizar.user}} formControlName="user">
-                <input *ngIf="router.url==='/crear'" class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user">
+                <input *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="user" required formControlName="user" [(ngModel)]="personaActualizar.user">
+                <input *ngIf="router.url==='/crear'" class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user" >
             </div>
 
             <div class="campo">
                  <label for="password" class="form-label">Contraseña:</label>
-                 <input  *ngIf="router.url==='/actualizar'" class="formulario" type="password" id="password" required autocomplete="new-password" placeholder={{personaActualizar.password}} value={{personaActualizar.password}} formControlName="password">
+                 <input  *ngIf="router.url==='/actualizar'" class="formulario" type="password" id="password" required autocomplete="new-password"  formControlName="password" [(ngModel)]="personaActualizar.password">
                 <input  *ngIf="router.url==='/crear'"  class="formulario" type="password" id="password" required autocomplete="new-password" placeholder="password" formControlName="password">
             </div>
 
             <div class="campo">
                 <label for="surname" class="form-label">Surname:</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="surname" required placeholder={{personaActualizar.surname}}  value={{personaActualizar.surname}} formControlName="surname">    
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="surname" required  formControlName="surname" [(ngModel)]="personaActualizar.surname">    
                 <input   *ngIf="router.url==='/crear'" class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">    
             </div>
 
 
             <div class="campo">
                 <label for="company_email" class="form-label">Company email</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="email" id="company_email" required placeholder={{personaActualizar.company_email}} value={{personaActualizar.company_email}} formControlName="company_email">    
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="email" id="company_email" required  formControlName="company_email" [(ngModel)]="personaActualizar.company_email">    
                 <input  *ngIf="router.url==='/crear'" class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">    
             </div>
 
 
             <div class="campo">
                 <label for="personal_email" class="form-label">Personal email</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario"  type="email" id="personal_email" required placeholder={{personaActualizar.personal_email}} value={{personaActualizar.personal_email}} formControlName="personal_email">
+                <input  *ngIf="router.url==='/actualizar'" class="formulario"  type="email" id="personal_email" required  formControlName="personal_email" [(ngModel)]="personaActualizar.personal_email">
                 <input *ngIf="router.url==='/crear'"  class="formulario"  type="email" id="personal_email" required placeholder="Personal Email" formControlName="personal_email">
             </div>
 
 
             <div class="campo">
                 <label for="city" class="form-label">City        </label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="city" required placeholder={{personaActualizar.city}} value={{personaActualizar.city}} formControlName="city">           
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="city" required  formControlName="city"[(ngModel)]="personaActualizar.city">           
                 <input  *ngIf="router.url==='/crear'" class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
             </div>
 
 
             <div class="campo">
                 <label for="active" class="form-label">Active</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="checkbox" id="active"  formControlName="active" value={{personaActualizar.active}}>
+                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="checkbox" id="active"  formControlName="active" [(ngModel)]="personaActualizar.active">
                 <input  *ngIf="router.url==='/crear'" class="formulario" type="checkbox" id="active"  formControlName="active">
                 
             </div>
@@ -61,7 +61,7 @@
 
             <div class="campo">
                 <label for="created_Date" class="form-label">created_Date</label>
-                <input   *ngIf="router.url==='/actualizar'" class="formulario" type="date" id="created_Date" required formControlName="created_Date"  value={{personaActualizar.created_Date}}>    
+                <input   *ngIf="router.url==='/actualizar'" class="formulario" type="date" id="created_Date" required formControlName="created_Date"  [(ngModel)]="personaActualizar.created_Date">    
                 <input  *ngIf="router.url==='/crear'" class="formulario" type="date" id="created_Date" required formControlName="created_Date">    
             </div>
 

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/services/api-service.service';
 import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
-import { PersonaOutput } from 'src/app/interfaces/PersonaDTOOutput';
+
 
 
 
@@ -18,6 +18,8 @@ export class NuevaPersonaComponent implements OnInit{
   constructor(private formBuilder:FormBuilder,private service:ApiServiceService,public router:Router) { }
   ngOnInit(): void {
     this.personaActualizar=this.service.personaActualizar
+   if(this.router.url==='/actualizar')
+    this.personaForm.setValue(this.personaActualizar)
   }
 personaActualizar:PersonaDTO;
    
