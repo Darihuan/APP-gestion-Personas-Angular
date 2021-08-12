@@ -13,7 +13,7 @@
               </div>
             <div class="campo">
                 <label for="user" class="form-label">Nombre de usuario:</label>
-                <input *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="user" required formControlName="user">
+                <input *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="user" required formControlName="user" >
                 <input *ngIf="router.url==='/crear'" class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user" >
             </div>
 
@@ -50,7 +50,7 @@
                 <input  *ngIf="router.url==='/crear'" class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
             </div>
             <div class="campo">
-                <label for="imagen_url" class="form-label">City        </label>
+                <label for="imagen_url" class="form-label">imagen url       </label>
                 <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="imagen_url" required  formControlName="url imagen" formControlName="imagen_url">           
                 <input  *ngIf="router.url==='/crear'" class="formulario" type="text" id="imagen_url" required placeholder="url imagen" formControlName="imagen_url">           
             </div>
