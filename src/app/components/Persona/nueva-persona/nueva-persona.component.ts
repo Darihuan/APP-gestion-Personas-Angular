@@ -32,6 +32,7 @@ export class NuevaPersonaComponent implements OnInit{
     'company_email': [''],
     'personal_email': [''],
     'city':[''],
+    'imagen_url':[''],
     'active':[false],
     'created_Date':['']
   });
@@ -41,7 +42,7 @@ export class NuevaPersonaComponent implements OnInit{
     
    let persona:PersonaDTO=new PersonaDTO(null,this.personaForm.get('user').value,this.personaForm.get('password').value,
     this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
-    this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value);
+    this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value,this.personaForm.get('imagen_url').value);
 
     this.service.crearPersona(persona).subscribe(()=>this.router.navigate(['/']));  
 
@@ -51,7 +52,7 @@ export class NuevaPersonaComponent implements OnInit{
 
     let persona=new PersonaDTO(this.personaActualizar.id,this.personaForm.get('user').value,this.personaForm.get('password').value,
     this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
-    this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value);
+    this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value,this.personaForm.get('imagen_url').value);
 
     this.service.actualizar(persona).subscribe((actualizar)=>{
       this.service.contador_alertas=this.service.contador_alertas+1;

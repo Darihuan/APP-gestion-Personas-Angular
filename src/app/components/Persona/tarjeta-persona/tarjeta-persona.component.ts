@@ -30,7 +30,7 @@ export class TarjetaPersonaComponent implements OnInit {
     this.service.borrarPersona(persona.id)
     .subscribe((borrado)=>{
       this.service.contador_alertas=this.service.contador_alertas+1;
-      this.service.alertas.push(new Alerta("Borrar","Persona con id:"+persona.id+" ha sido borrada"));
+      this.service.alertas.push(new Alerta("Borrado","Persona con id:"+persona.id+" ha sido borrada"));
     })
     
     this.borrado.emit(persona); 

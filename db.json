@@ -1,19 +1,16 @@
 {
-  "posts": [
+  "personas": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "id": 5,
+      "user": "",
+      "password": "",
+      "surname": "",
+      "company_email": "",
+      "personal_email": "",
+      "city": "",
+      "active": false,
+      "created_Date": "",
+      "imagen_url": ""
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
