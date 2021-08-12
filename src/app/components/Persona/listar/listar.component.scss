@@ -1,3 +1,6 @@
+.cuerpolistar{
+  height: 100vh;
+}
 .listar{
     display: flex;
     flex-direction: row;
@@ -17,6 +20,6 @@
     display: flex;
     justify-content: center;
     padding-top: 10vh;
-  
+  color:black;
     z-index: 1;
   }

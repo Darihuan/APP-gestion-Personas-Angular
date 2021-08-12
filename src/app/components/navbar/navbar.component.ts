@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Alerta } from 'src/app/interfaces/Alerta';
 import { PersonaService } from 'src/app/services/persona/persona.service';
 
 @Component({
@@ -9,8 +10,18 @@ import { PersonaService } from 'src/app/services/persona/persona.service';
 export class NavbarComponent implements OnInit {
 
   constructor(public service:PersonaService) { }
-  condicion;
+
   ngOnInit(): void {
+ 
   }
+  
+
+  /*variables*/
+  condicion:boolean;
+  alerta:Alerta;
+
+
 
 }
+
+

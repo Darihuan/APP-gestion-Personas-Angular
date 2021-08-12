@@ -11,7 +11,6 @@ import { ListarComponent } from './components/Persona/listar/listar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { NuevaPersonaComponent } from './components/Persona/nueva-persona/nueva-persona.component';
 import { PrincipalComponent } from './components/principal/principal.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { TarjetaPersonaComponent } from './components/Persona/tarjeta-persona/tarjeta-persona.component';
 /*angular meterials*/
 import {MatTableModule} from '@angular/material/table';
@@ -34,7 +33,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PrincipalComponent,
     ListarComponent,
     TarjetaPersonaComponent,
-    SidenavComponent,
+   
     NavbarComponent
  
   ],

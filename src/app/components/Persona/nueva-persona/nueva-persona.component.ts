@@ -1,6 +1,7 @@
 import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Alerta } from 'src/app/interfaces/Alerta';
 import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
 import { PersonaService } from 'src/app/services/persona/persona.service';
 
@@ -52,11 +53,19 @@ export class NuevaPersonaComponent implements OnInit{
     this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
     this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value);
 
-    this.service.actualizar(persona);
-    this.router.navigate(['/listar'])
+    this.service.actualizar(persona).subscribe((actualizar)=>{
+      this.service.contador_alertas=this.service.contador_alertas+1;
+      this.service.alertas.push(new Alerta("Actualizacion","Persona con id:"+persona.id+" ha sido actualizado"))});
+     this.router.navigate(['/listar'])
   }
   borrarPersona(persona:PersonaDTO):void{
-    this.service.borrarPersona(persona.id).subscribe(()=> this.router.navigate(['/listar']));
+    this.service.borrarPersona(persona.id).subscribe((borrado)=>{
+      this.service.contador_alertas=this.service.contador_alertas+1;
+      this.service.alertas.push(new Alerta("Borrado","Persona con id:"+persona.id+" ha sido borrada"));
+    })
+    .add(()=>{
+      this.router.navigate(['/listar']);
+    }).unsubscribe();
    
   }
 

@@ -1,30 +1,26 @@
 {
   "personas": [
     {
-      "id": 10,
-      "user": "prueba3",
-      "password": "5678909",
-      "surname": "prueba3",
-      "company_email": "prueba3@company.com",
-      "personal_email": "prueba3@personal.com",
-      "city": "zaragoza",
-      "active": false,
-      "created_Date": "2021-08-05T00:00:00.000+00:00",
-      "imagen_url": "https://pgimgmt.com/wp-content/uploads/2018/05/generic-user.jpg",
-      "termination_Date": null
+      "id": 2,
+      "user": "dasdasd",
+      "password": "asdasd",
+      "surname": "gumersindo lopez",
+      "company_email": "damesamarin@gmail.com",
+      "personal_email": "damesamarin@gmail.com",
+      "city": "Logroño",
+      "active": true,
+      "created_Date": "2021-08-06"
     },
     {
-      "id": 11,
-      "user": "prueba4",
-      "password": "5678909",
-      "surname": "prueba4",
-      "company_email": "prueba4@company.com",
-      "personal_email": "prueba4@personal.com",
-      "city": "Madrid",
-      "active": false,
-      "created_Date": "2021-08-05T00:00:00.000+00:00",
-      "imagen_url": "https://pgimgmt.com/wp-content/uploads/2018/05/generic-user.jpg",
-      "termination_Date": null
+      "id": 5,
+      "user": "dasdasd",
+      "password": "asdasd",
+      "surname": "gumersindo lopez",
+      "company_email": "damesamarin@gmail.com",
+      "personal_email": "damesamarin@gmail.com",
+      "city": "Logroño",
+      "active": true,
+      "created_Date": "2021-08-06"
     }
   ]
 }

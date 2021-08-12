@@ -1,21 +1,55 @@
 *{
     text-decoration: none;
-    color: white;
-    z-index: 9;
+   color:aliceblue;
+  
     
+    
+}
+.grid{
+    display: flex;
+    flex-direction: column;
+  
 }
 .position{
+    
     position: fixed;
+    z-index: 9;
 }
 .barra{
-    display: flex;
+    display: flex;  
     justify-content: space-evenly;
     align-content: center;
+  
     
 }
+
+
 .icono{
     padding: 1.5vh;
+
+}
+.cuerpo{
+    height: 100vh;
 }
 .sidenav{
-    width: 10%;
+    display:flex;
+    justify-content: center;
+    align-content:center;
+    
+    text-align: center;
+    width: 30vh;
+    border-radius: 5px;
+    background: #002b5c;
+    margin-top: 7vh;
+
+   
+    
+   
 }
+
+.alerta{
+    width: 15vh;
+    margin: 3vh;
+    background: rgba($color:#ffcc00 , $alpha: 0.7)
+}
+

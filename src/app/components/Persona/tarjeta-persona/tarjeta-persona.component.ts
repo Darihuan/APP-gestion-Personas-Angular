@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
+import { Alerta } from 'src/app/interfaces/Alerta';
 import { PersonaOutput } from 'src/app/interfaces/PersonaDTOOutput';
 import { PersonaService } from 'src/app/services/persona/persona.service';
 
@@ -26,10 +27,16 @@ export class TarjetaPersonaComponent implements OnInit {
    /*metodos*/
    
   borrarPersona(persona):void{
-    this.service.borrarPersona(persona.id);
-    this.borrado.emit(persona) }
+    this.service.borrarPersona(persona.id)
+    .subscribe((borrado)=>{
+      this.service.contador_alertas=this.service.contador_alertas+1;
+      this.service.alertas.push(new Alerta("Borrar","Persona con id:"+persona.id+" ha sido borrada"));
+    })
+    
+    this.borrado.emit(persona); 
+  }
 
-  actualizarPersona(persona):void{ this.service.persona_actualizar=persona  }
+  actualizarPersona(persona):void{ this.service.persona_actualizar=persona;  }
 
 
 

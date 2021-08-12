@@ -1,4 +1,6 @@
-<mat-toolbar color="primary" class="position">
+<div class="grid">
+ <div class="navegacion">
+  <mat-toolbar color="primary" class="position">
     <mat-toolbar-row class="barra">
       <div>
         <a class="titulo" routerLink="/">CRUD PERSONAS</a>
@@ -7,16 +9,45 @@
 
       </div>
       <div> 
-        <mat-icon matBadge={{service.contador_borrados}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
+        <mat-icon matBadge={{service.contador_alertas}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
       </div>
  
      
     </mat-toolbar-row>
   </mat-toolbar>
+ </div>
+
   <div class="cuerpo">
-    <app-sidenav  [abrirlateral]="condicion" class="sidenav"></app-sidenav>
-    <router-outlet></router-outlet>
+    <mat-sidenav-container  >
+      <mat-sidenav #sidenav mode="side" class="sidenav" color="primary"  [opened]="condicion">
+        <div *ngFor="let alerta of this.service.alertas">
+
+          <mat-card class="alerta" >
+            <mat-card-header>
+             
+              <mat-card-title><span class="info">{{alerta.tipo}}</span></mat-card-title>
+              
+            </mat-card-header>
+            <mat-card-content>
+              <p>{{alerta.mensaje}}</p>
+            </mat-card-content>
+          </mat-card>
+
+
+
+
+        </div>
+  
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+
+  
   </div>
 
+
+</div>
 
   

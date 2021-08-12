@@ -6,6 +6,7 @@ import { PersonaService } from 'src/app/services/persona/persona.service';
 import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
 
 
+
 @Component({
   selector: 'app-listar',
   templateUrl: './listar.component.html',
@@ -17,8 +18,6 @@ export class ListarComponent implements OnInit {
 
   ngOnInit(): void { 
       this.service.getPersonas().subscribe(persona_server=>this.personas=persona_server)
-      /*.then(elementos=>elementos
-      .forEach(elemento=>this.personas.push(elemento)));*/
   }
   /*variables*/
   personas:PersonaOutput[]=[];
@@ -27,7 +26,7 @@ export class ListarComponent implements OnInit {
    
    /*metodos*/
 
-  recibirmensajePersona($event):void{
+  recibirmensajePersona($event:PersonaDTO):void{
     let arraytemporal=this.personas.filter(elemento=>elemento!=$event)
     this.personas=arraytemporal;
   }
