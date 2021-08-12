@@ -7,10 +7,16 @@
 
       </div>
       <div> 
-        <mat-icon matBadge={{service.contadorborrados}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
+        <mat-icon matBadge={{service.contador_borrados}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
       </div>
  
      
     </mat-toolbar-row>
   </mat-toolbar>
-  <app-sidenav  [abrirlateral]="condicion" class="sidenav"></app-sidenav>
+  <div class="cuerpo">
+    <app-sidenav  [abrirlateral]="condicion" class="sidenav"></app-sidenav>
+    <router-outlet></router-outlet>
+  </div>
+
+
+  

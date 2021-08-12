@@ -1,8 +1,8 @@
-import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ApiServiceService } from 'src/app/services/api-service.service';
 import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
+import { PersonaService } from 'src/app/services/persona/persona.service';
 
 
 
@@ -15,17 +15,16 @@ import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
 export class NuevaPersonaComponent implements OnInit{
  
 
-  constructor(private formBuilder:FormBuilder,private service:ApiServiceService,public router:Router) { }
+  constructor(private formBuilder:FormBuilder,private service:PersonaService,public router:Router) { }
+
   ngOnInit(): void {
-    this.personaActualizar=this.service.personaActualizar
-   if(this.router.url==='/actualizar')
+    this.personaActualizar=this.service.persona_actualizar;
+    if(this.router.url==='/actualizar')
     this.personaForm.setValue(this.personaActualizar)
   }
-personaActualizar:PersonaDTO;
-   
- 
-  
-  personaForm=this.formBuilder.group({
+  /*variables*/
+  personaActualizar:PersonaDTO;
+   personaForm:FormGroup=this.formBuilder.group({
     'user': [''],
     'password': [''],
     'surname': [''],
@@ -34,24 +33,20 @@ personaActualizar:PersonaDTO;
     'city':[''],
     'active':[false],
     'created_Date':['']
-
   });
+  /*metodos*/
 
-  submit(){
+  submit():void{
     
-    let persona=new PersonaDTO(null,this.personaForm.get('user').value,this.personaForm.get('password').value,
+   let persona:PersonaDTO=new PersonaDTO(null,this.personaForm.get('user').value,this.personaForm.get('password').value,
     this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
     this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value);
 
-    this.service.crearPersona(persona);
-
-   
-
-    
+    this.service.crearPersona(persona).subscribe(()=>this.router.navigate(['/']));  
 
   }
   
-  update(){
+  update():void{
 
     let persona=new PersonaDTO(this.personaActualizar.id,this.personaForm.get('user').value,this.personaForm.get('password').value,
     this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
@@ -60,12 +55,12 @@ personaActualizar:PersonaDTO;
     this.service.actualizar(persona);
     this.router.navigate(['/listar'])
   }
-  borrarPersona(persona:PersonaDTO){
-    this.service.borrarPersona(persona.id).then(()=> this.router.navigate(['/listar']));
+  borrarPersona(persona:PersonaDTO):void{
+    this.service.borrarPersona(persona.id).subscribe(()=> this.router.navigate(['/listar']));
    
   }
 
-  refrescar(){
+  refrescar():void{
     this.personaForm.patchValue({
       'user': [''],
       'password': [''],

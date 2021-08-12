@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ListarComponent } from './Persona/listar/listar.component';
-import { NuevaPersonaComponent } from './Persona/nueva-persona/nueva-persona.component';
-import { PrincipalComponent } from './principal/principal.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
+import { ListarComponent } from './components/Persona/listar/listar.component';
+import { NuevaPersonaComponent } from './components/Persona/nueva-persona/nueva-persona.component';
+import { PrincipalComponent } from './components/principal/principal.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 
 const routes: Routes = [
   {path:"",component:PrincipalComponent},
