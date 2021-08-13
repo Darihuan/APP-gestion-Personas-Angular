@@ -27,7 +27,9 @@
              
               <mat-card-title><span class="info">{{alerta.tipo}}</span></mat-card-title>
               <mat-icon (click)="delete_alert(alerta)" class="borrar">delete</mat-icon>
+              <mat-divider class="divider"></mat-divider>
             </mat-card-header>
+            
             <mat-card-content>
               <p>{{alerta.mensaje}}</p>
             </mat-card-content>

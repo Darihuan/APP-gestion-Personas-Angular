@@ -16,10 +16,13 @@ export class PersonaService {
 /*variables*/
   persona_actualizar:PersonaOutput;
   alertas:Alerta[]=[];
+  contador_alertas:number=0;
+
+
   api_url:string="http://localhost:3000/personas/";
 
   id_persona:number=0;  
-  contador_alertas:number=0;
+
 
 
 
@@ -51,4 +54,6 @@ export class PersonaService {
     return this.http.put<PersonaOutput>(this.api_url+persona.id, persona);
     /*.toPromise();*/
   }
+
+
 }

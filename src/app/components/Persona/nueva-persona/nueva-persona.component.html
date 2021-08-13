@@ -5,69 +5,65 @@
     <div class="contenedor">
     
         <form  id="formulario" (submit)="submit()"  [formGroup]="personaForm">
-            <div *ngIf="router.url==='/actualizar'">
+            <div *ngIf="condicion">
                 <h1 class="botones">Actualizar Datos Persona:</h1>
               </div>
-              <div *ngIf="router.url==='/crear'">
+              <div *ngIf="!condicion">
                 <h1 class="botones">Crear Persona:</h1>
               </div>
             <div class="campo">
+                
                 <label for="user" class="form-label">Nombre de usuario:</label>
-                <input *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="user" required formControlName="user" >
-                <input *ngIf="router.url==='/crear'" class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user" >
+                <input  class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user" >
             </div>
 
             <div class="campo">
                  <label for="password" class="form-label">Contraseña:</label>
-                 <input  *ngIf="router.url==='/actualizar'" class="formulario" type="password" id="password" required autocomplete="new-password"  formControlName="password" formControlName="password">
-                <input  *ngIf="router.url==='/crear'"  class="formulario" type="password" id="password" required autocomplete="new-password" placeholder="password" formControlName="password">
+                <input   class="formulario" type="password" id="password" required autocomplete="new-password" placeholder="password" formControlName="password">
             </div>
 
             <div class="campo">
                 <label for="surname" class="form-label">Surname:</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="surname" required  formControlName="surname" >    
-                <input   *ngIf="router.url==='/crear'" class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">    
+                <input    class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">    
             </div>
 
 
             <div class="campo">
                 <label for="company_email" class="form-label">Company email</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="email" id="company_email" required  formControlName="company_email" >    
-                <input  *ngIf="router.url==='/crear'" class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">    
+                <input   class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">    
             </div>
 
 
             <div class="campo">
                 <label for="personal_email" class="form-label">Personal email</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario"  type="email" id="personal_email" required  formControlName="personal_email"  >
-                <input *ngIf="router.url==='/crear'"  class="formulario"  type="email" id="personal_email" required placeholder="Personal Email" formControlName="personal_email">
+                <input   class="formulario"  type="email" id="personal_email" required placeholder="Personal Email" formControlName="personal_email">
             </div>
 
 
             <div class="campo">
                 <label for="city" class="form-label">City        </label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="city" required  formControlName="city" formControlName="city">           
-                <input  *ngIf="router.url==='/crear'" class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
+            
+                <input   class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
             </div>
             <div class="campo">
                 <label for="imagen_url" class="form-label">imagen url       </label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="text" id="imagen_url" required  formControlName="url imagen" formControlName="imagen_url">           
-                <input  *ngIf="router.url==='/crear'" class="formulario" type="text" id="imagen_url" required placeholder="url imagen" formControlName="imagen_url">           
+
+                <input   class="formulario" type="text" id="imagen_url" required placeholder="url imagen" formControlName="imagen_url">           
             </div>
 
 
             <div class="campo">
                 <label for="active" class="form-label">Active</label>
-                <input  *ngIf="router.url==='/actualizar'" class="formulario" type="checkbox" id="active"  formControlName="active" formControlName="active">
-                <input  *ngIf="router.url==='/crear'" class="formulario" type="checkbox" id="active"  formControlName="active">
+            
+                <input class="formulario" type="checkbox" id="active"  formControlName="active">
                 
             </div>
 
 
             <div class="campo">
                 <label for="created_Date" class="form-label">created_Date</label>
-                <input   *ngIf="router.url==='/actualizar'" class="formulario" type="date" id="created_Date" required formControlName="created_Date"  formControlName="created_Date">    
-                <input  *ngIf="router.url==='/crear'" class="formulario" type="date" id="created_Date" required formControlName="created_Date">    
+                   
+                <input   class="formulario" type="date" id="created_Date" required formControlName="created_Date">    
             </div>
 
             <button *ngIf="router.url==='/crear'" class="boton" type="submit" >Enviar</button>

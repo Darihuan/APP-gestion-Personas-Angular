@@ -22,7 +22,7 @@ export class NavbarComponent implements OnInit {
 
   /*funciones*/
   delete_alert(alerta:Alerta):void{
-    this.service.alertas.splice(this.service.alertas.indexOf(alerta));
+    this.service.alertas= this.service.alertas.filter(alertaarray=>alertaarray!=alerta)
     this.service.contador_alertas--;
   }
 

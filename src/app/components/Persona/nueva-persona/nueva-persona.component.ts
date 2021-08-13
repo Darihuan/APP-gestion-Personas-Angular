@@ -20,7 +20,9 @@ export class NuevaPersonaComponent implements OnInit{
 
   ngOnInit(): void {
     this.personaActualizar=this.service.persona_actualizar;
+
     if(this.router.url==='/actualizar'){
+      this.condicion=!this.condicion
       this.personaForm.get('user').setValue(this.personaActualizar.user);
       this.personaForm.get('password').setValue(this.personaActualizar.password);
     this.personaForm.get('surname').setValue(this.personaActualizar.surname);
@@ -47,6 +49,7 @@ export class NuevaPersonaComponent implements OnInit{
     'active':[false],
     'created_Date':['']
   });
+  condicion:boolean=false;
   /*metodos*/
 
   submit():void{
@@ -70,8 +73,8 @@ export class NuevaPersonaComponent implements OnInit{
 
     this.service.actualizar(persona).subscribe((actualizar)=>{
       this.service.contador_alertas=this.service.contador_alertas+1;
-      this.service.alertas.push(new Alerta("Actualizacion","Persona con id:"+persona.id+" ha sido actualizado"));
-     
+      this.service.alertas.push(new Alerta("Actualizacion","Persona con id:"+persona.id+" ha sido actualizado",Math.floor(Math.random() * 999999)));
+      this.condicion=!this.condicion;
     });
     this.router.navigate(['/listar'])
     
@@ -80,7 +83,7 @@ export class NuevaPersonaComponent implements OnInit{
   borrarPersona(persona:PersonaDTO):void{
     this.service.borrarPersona(persona.id).subscribe((borrado)=>{
       this.service.contador_alertas=this.service.contador_alertas+1;
-      this.service.alertas.push(new Alerta("Borrado","Persona con id:"+persona.id+" ha sido borrada"));
+      this.service.alertas.push(new Alerta("Borrado","Persona con id:"+persona.id+" ha sido borrada",Math.floor(Math.random() * 999999)));
     })
     .add(()=>{
       this.router.navigate(['/listar']);

@@ -48,9 +48,18 @@
 }
 
 .alerta{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    
     width: auto;
     margin: 3vh;
     background: rgba($color:#ffcc00 , $alpha: 0.7)
+}
+.divider{
+    
+    max-width: 80%;
 }
 
 
