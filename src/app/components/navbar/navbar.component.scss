@@ -1,26 +1,32 @@
 *{
     text-decoration: none;
    color:aliceblue;
-  
-    
-    
+
+
+
+}
+.titulo{
+  margin: 2vh;
 }
 .grid{
     display: flex;
     flex-direction: column;
-  
+
 }
 .position{
-    
+
     position: fixed;
     z-index: 9;
 }
 .barra{
-    display: flex;  
+    display: flex;
     justify-content: space-evenly;
     align-content: center;
-  
-    
+
+
+}
+.rutas::selection {
+  background-color: yellow;
 }
 
 
@@ -35,16 +41,16 @@
     display:flex;
     justify-content: center;
     align-content:center;
-    
+
     text-align: center;
     width: 30vh;
     border-radius: 5px;
     background: #002b5c;
     margin-top: 7vh;
 
-   
-    
-   
+
+
+
 }
 
 .alerta{
@@ -52,13 +58,13 @@
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    
+
     width: auto;
     margin: 3vh;
     background: rgba($color:#ffcc00 , $alpha: 0.7)
 }
 .divider{
-    
+
     max-width: 80%;
 }
 

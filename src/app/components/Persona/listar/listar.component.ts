@@ -16,14 +16,14 @@ export class ListarComponent implements OnInit {
 
   constructor(private service:PersonaService,public router:Router) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
       this.service.getPersonas().subscribe(persona_server=>this.personas=persona_server)
   }
   /*variables*/
   personas:PersonaOutput[]=[];
-   personaActualizarPadre:PersonaDTO;
 
-   
+
+
    /*metodos*/
 
   recibirmensajePersona($event:PersonaDTO):void{
@@ -31,8 +31,8 @@ export class ListarComponent implements OnInit {
     this.personas=arraytemporal;
   }
 
-  
-  
+
+
 
 
 

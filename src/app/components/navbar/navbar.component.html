@@ -4,32 +4,35 @@
     <mat-toolbar-row class="barra">
       <div>
         <a class="titulo" routerLink="/">CRUD PERSONAS</a>
-        <a mat-raised-button color="primary" routerLink="crear">Crear Nueva persona</a>
-        <a mat-raised-button color="primary" routerLink="listar">Listar Personas</a>
+        <a mat-raised-button color="primary" routerLink="crear" class="rutas">Crear Nueva persona</a>
+        <a mat-raised-button color="primary" routerLink="listar" class="rutas">Listar Personas</a>
 
       </div>
-      <div> 
-        <mat-icon matBadge={{service.contador_alertas}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
+      <div>
+        <mat-icon matBadge={{this.alertas.length}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>
       </div>
- 
-     
+
+
     </mat-toolbar-row>
   </mat-toolbar>
  </div>
 
+
+
+
   <div class="cuerpo">
     <mat-sidenav-container  >
       <mat-sidenav #sidenav mode="side" class="sidenav" color="primary"  [opened]="condicion">
-        <div *ngFor="let alerta of this.service.alertas">
+        <div *ngFor="let alerta of this.alertas">
 
           <mat-card class="alerta" >
             <mat-card-header>
-             
+
               <mat-card-title><span class="info">{{alerta.tipo}}</span></mat-card-title>
               <mat-icon (click)="delete_alert(alerta)" class="borrar">delete</mat-icon>
-              <mat-divider class="divider"></mat-divider>
+
             </mat-card-header>
-            
+
             <mat-card-content>
               <p>{{alerta.mensaje}}</p>
             </mat-card-content>
@@ -39,17 +42,16 @@
 
 
         </div>
-  
+
       </mat-sidenav>
       <mat-sidenav-content>
         <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
 
-  
+
   </div>
 
 
 </div>
 
-  

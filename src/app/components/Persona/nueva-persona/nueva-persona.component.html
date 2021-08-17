@@ -1,18 +1,16 @@
-<body>
-    
-    
-    
+
+   <div class="general">
     <div class="contenedor">
-    
+
         <form  id="formulario" (submit)="submit()"  [formGroup]="personaForm">
-            <div *ngIf="condicion">
+            <div *ngIf="!condicion">
                 <h1 class="botones">Actualizar Datos Persona:</h1>
               </div>
-              <div *ngIf="!condicion">
+              <div *ngIf="condicion">
                 <h1 class="botones">Crear Persona:</h1>
               </div>
             <div class="campo">
-                
+
                 <label for="user" class="form-label">Nombre de usuario:</label>
                 <input  class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user" >
             </div>
@@ -24,13 +22,13 @@
 
             <div class="campo">
                 <label for="surname" class="form-label">Surname:</label>
-                <input    class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">    
+                <input    class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">
             </div>
 
 
             <div class="campo">
                 <label for="company_email" class="form-label">Company email</label>
-                <input   class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">    
+                <input   class="formulario" type="email" id="company_email" required placeholder="Company Email" formControlName="company_email">
             </div>
 
 
@@ -42,40 +40,41 @@
 
             <div class="campo">
                 <label for="city" class="form-label">City        </label>
-            
-                <input   class="formulario" type="text" id="city" required placeholder="City" formControlName="city">           
+
+                <input   class="formulario" type="text" id="city" required placeholder="City" formControlName="city">
             </div>
             <div class="campo">
                 <label for="imagen_url" class="form-label">imagen url       </label>
 
-                <input   class="formulario" type="text" id="imagen_url" required placeholder="url imagen" formControlName="imagen_url">           
+                <input   class="formulario" type="text" id="imagen_url" required placeholder="url imagen" formControlName="imagen_url">
             </div>
 
 
             <div class="campo">
                 <label for="active" class="form-label">Active</label>
-            
+
                 <input class="formulario" type="checkbox" id="active"  formControlName="active">
-                
+
             </div>
 
 
             <div class="campo">
                 <label for="created_Date" class="form-label">created_Date</label>
-                   
-                <input   class="formulario" type="date" id="created_Date" required formControlName="created_Date">    
-            </div>
 
-            <button *ngIf="router.url==='/crear'" class="boton" type="submit" >Enviar</button>
+                <input   class="formulario" type="date" id="created_Date" required formControlName="created_Date">
+            </div>
+            <button *ngIf="condicion" class="boton" type="submit" >Enviar</button>
             <div class="botones">
-                <button *ngIf="router.url==='/actualizar'" mat-stroked-button (click)="update()">Actualizar</button>
-                <button *ngIf="router.url==='/actualizar'" mat-stroked-button color="warn" (click)="borrarPersona(personaActualizar)" >borrar</button>
+                <button  *ngIf="!condicion" mat-stroked-button (click)="update()">Actualizar</button>
+                <button  *ngIf="!condicion" mat-stroked-button color="warn" (click)="borrarPersona(personaActualizar)" >borrar</button>
             </div>
 
         </form>
     </div>
 
-   
+
+   </div>
 
 
-</body>
+
+

@@ -9,21 +9,21 @@
     padding: 3vh;
     color:white;
     font-weight: 500;
-   
+
 
     background: linear-gradient(to right,rgba(black,0.5),rgba(black,0.5)),
     url("https://cadenaser00.epimg.net/ser/imagenes/2020/01/08/sociedad/1578499350_447662_1578499720_noticia_normal.jpg");
     background-size: cover;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.hero-titulo{ 
+.hero-titulo{
     font-size: 12vh;
     margin: 3vh;
 }
-.hero-titulo-detalle{ 
+.hero-titulo-detalle{
     font-size: 12vh;
     margin: 3vh;
-    padding: auto;
+
     color: orange;
 }
 .hero-subtitulo{
@@ -35,14 +35,14 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    
+
     z-index: 1;
 }
 .example-card {
     max-width: 250px;
     margin: 3vh;
   }
-  
+
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;

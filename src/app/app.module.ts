@@ -1,3 +1,4 @@
+
 /*Angular*/
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,16 +7,19 @@ import { AppComponent } from './app.component';
 import { FormsModule,ReactiveFormsModule} from '@angular/forms'
 import {  HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+
 /*componentes*/
+import {NuevaPersonaComponent} from "./components/Persona/nueva-persona/nueva-persona.component";
 import { ListarComponent } from './components/Persona/listar/listar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { NuevaPersonaComponent } from './components/Persona/nueva-persona/nueva-persona.component';
+
 import { PrincipalComponent } from './components/principal/principal.component';
 import { TarjetaPersonaComponent } from './components/Persona/tarjeta-persona/tarjeta-persona.component';
+
+
 /*angular meterials*/
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatCardModule} from '@angular/material/card';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatBadgeModule} from '@angular/material/badge';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -25,17 +29,19 @@ import {MatButtonModule} from '@angular/material/button';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from "@angular/material/card";
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    NuevaPersonaComponent,
     PrincipalComponent,
     ListarComponent,
     TarjetaPersonaComponent,
-   
-    NavbarComponent
- 
+    NavbarComponent,
+    NuevaPersonaComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -57,7 +63,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatBadgeModule,
     MatSidenavModule
 
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]
