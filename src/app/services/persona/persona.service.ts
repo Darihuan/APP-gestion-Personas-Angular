@@ -1,63 +1,58 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
-import { Alerta } from 'src/app/interfaces/Alerta';
-import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
-import { PersonaOutput } from 'src/app/interfaces/PersonaDTOOutput';
+import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Router} from '@angular/router';
+import {Observable} from 'rxjs';
+import {PersonaDTO} from 'src/app/interfaces/PersonaDTO';
+import {PersonaOutput} from 'src/app/interfaces/PersonaDTOOutput';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonaService {
+  /*variables*/
 
-  constructor(private http:HttpClient,private router:Router) { }
-
-/*variables*/
-  alertas:Alerta[]=[];
+  private apiUrl: string;
 
 
-
-  api_url:string="http://localhost:3000/personas/";
-
-  id_persona:number=0;
-
+  constructor(private http: HttpClient, private router: Router) {
+    this.apiUrl = "http://localhost:3000/personas/";
+  }
 
 
+  /*metodos*/
 
+  public crearPersona(persona: PersonaDTO): Observable<PersonaOutput> {
 
-
-/*metodos*/
-
-  crearPersona(persona:PersonaDTO):Observable<PersonaOutput>{
-
-    return this.http.post<PersonaOutput>(this.api_url,persona);
-
+    return this.http.post<PersonaOutput>(this.apiUrl, persona);
 
 
   }
-  getPersonas():Observable<PersonaOutput[]>{
-    return this.http.get<PersonaOutput[]>(this.api_url);
+
+  public getPersonas(): Observable<PersonaOutput[]> {
+    return this.http.get<PersonaOutput[]>(this.apiUrl);
 
 
   }
-   getPersonasbyId(id:number):Observable<PersonaOutput>{
+
+  public getPersonasById(id: number): Observable<PersonaOutput> {
     let personadevolver;
-    personadevolver= this.http.get<PersonaOutput>(this.api_url+id);
+    personadevolver = this.http.get<PersonaOutput>(this.apiUrl + id);
 
 
-     return personadevolver;
-
-
-    }
-  borrarPersona(id:number):Observable<any>{
-
-    return this.http.delete(this.api_url+id);
+    return personadevolver;
 
 
   }
-  actualizar(persona:PersonaDTO):Observable<PersonaOutput>{
-    return this.http.put<PersonaOutput>(this.api_url+persona.id, persona);
+
+  public borrarPersona(id: number): Observable<any> {
+
+    return this.http.delete(this.apiUrl + id);
+
+
+  }
+
+  public actualizar(persona: PersonaDTO): Observable<PersonaOutput> {
+    return this.http.put<PersonaOutput>(this.apiUrl + persona.id, persona);
 
   }
 

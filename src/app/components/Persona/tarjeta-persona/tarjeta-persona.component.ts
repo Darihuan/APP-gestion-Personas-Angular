@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, Output ,EventEmitter} from '@angular/core';
-import { Alerta } from 'src/app/interfaces/Alerta';
-import { PersonaOutput } from 'src/app/interfaces/PersonaDTOOutput';
-import { PersonaService } from 'src/app/services/persona/persona.service';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {PersonaOutput} from 'src/app/interfaces/PersonaDTOOutput';
+import {PersonaService} from 'src/app/services/persona/persona.service';
 import {AlertasService} from "../../../services/alertas/alertas.service";
 
 
@@ -11,29 +10,33 @@ import {AlertasService} from "../../../services/alertas/alertas.service";
   styleUrls: ['./tarjeta-persona.component.scss']
 })
 
-export class TarjetaPersonaComponent implements OnInit {
-
-  constructor(private service:PersonaService,private alertaService:AlertasService) { }
-  ngOnInit(): void {}
-
+export class TarjetaPersonaComponent {
   /*variables*/
   @Input()
-  persona:PersonaOutput;
+  persona: PersonaOutput;
   @Output()
-   borrado:EventEmitter<PersonaOutput>=new EventEmitter();
+  borrado: EventEmitter<PersonaOutput>;
   @Output()
-   actualizar:EventEmitter<PersonaOutput>=new EventEmitter();
+  actualizar: EventEmitter<PersonaOutput>;
 
 
-   /*metodos*/
+  constructor(private service: PersonaService, private alertaService: AlertasService) {
+    this.borrado = new EventEmitter();
+    this.actualizar = new EventEmitter();
+  }
 
-  borrarPersona(persona:PersonaOutput):void{
+  /*metodos*/
+
+  public borrarPersona(persona: PersonaOutput): void {
+    let id:number=persona.id;
     this.service.borrarPersona(persona.id)
-    .subscribe((borrado)=>{ this.alertaService.crearAlertaBorrar(borrado)})
+      .subscribe((borrado) => {
+
+        this.alertaService.crearAlerta(id, "borrado")
+      })
 
     this.borrado.emit(persona);
   }
-
 
 
 }

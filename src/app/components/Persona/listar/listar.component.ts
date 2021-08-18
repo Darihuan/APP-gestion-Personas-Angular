@@ -13,20 +13,23 @@ import { PersonaDTO } from 'src/app/interfaces/PersonaDTO';
   styleUrls: ['./listar.component.scss']
 })
 export class ListarComponent implements OnInit {
+  /*variables*/
+  public personas:PersonaOutput[];
 
-  constructor(private service:PersonaService,public router:Router) { }
+  constructor(private service:PersonaService,public router:Router) {
+    this.personas=[];
+  }
 
   ngOnInit(): void {
-      this.service.getPersonas().subscribe(persona_server=>this.personas=persona_server)
+      this.service.getPersonas().subscribe(personaServer=>this.personas=personaServer)
   }
-  /*variables*/
-  personas:PersonaOutput[]=[];
+
 
 
 
    /*metodos*/
 
-  recibirmensajePersona($event:PersonaDTO):void{
+  public recibirmensajePersona($event:PersonaDTO):void{
     let arraytemporal=this.personas.filter(elemento=>elemento!=$event)
     this.personas=arraytemporal;
   }
