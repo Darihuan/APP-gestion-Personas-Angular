@@ -1,0 +1,27 @@
+<mat-card class="example-card">
+  <mat-card-header>
+
+    <mat-card-title><span class="info">user: </span>{{estudiante.user}}</mat-card-title>
+    <mat-card-subtitle><span class="info">company_email </span>{{estudiante.company_email}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src={{estudiante.imagen_url}} alt="foto usuario">
+  <mat-card-content>
+    <mat-card-subtitle><span class="info">personal_email </span>{{estudiante.personal_email}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">password: </span>{{estudiante.password}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">surname </span>{{estudiante.surname}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">city </span>{{estudiante.city}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">active </span>{{estudiante.active}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">created_Date </span>{{estudiante.created_Date}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">termination_Date </span>{{estudiante.termination_Date}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">número horas por semana: </span>{{estudiante.num_hours_week}}
+    </mat-card-subtitle>
+    <mat-card-subtitle><span class="info">id profesor: </span>{{estudiante.id_profesor}}</mat-card-subtitle>
+    <mat-card-subtitle><span class="info">rama: </span>{{estudiante.branch}}</mat-card-subtitle>
+
+  </mat-card-content>
+  <div class="actions">
+
+    <button mat-stroked-button color="warn" (click)="closeWindow()">cerrar</button>
+  </div>
+</mat-card>
+

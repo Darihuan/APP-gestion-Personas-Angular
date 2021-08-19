@@ -1,54 +1,37 @@
 {
   "personas": [],
-
   "estudiantes": [
     {
-      "user": "ejemplo1",
-      "password": "adsdasd",
-      "name": "ejemplo1",
-      "surname": "de prueba",
-      "company_email": "empresa@correo.com",
-      "personal_email": "personal@correo.com",
-      "city": "soria",
+      "id": 2,
+      "user": "Luna",
+      "password": "dsdasdasd",
+      "name": "Luna ",
+      "surname": "María Pere",
+      "company_email": "email@company.com",
+      "personal_email": "personal@email.com",
+      "city": "burgos",
       "active": false,
-      "imagen_url": "",
-      "created_date": "2021-08-11",
-      "num_hours_week": 30,
-      "id_profesor": 3,
-      "branch": "backend",
-      "id": 1
-    },
-    {
-      "user": "alumno2",
-      "password": "1234",
-      "name": "alumno",
-      "surname": "aprendiz",
-      "company_email": "alumno@correo.com",
-      "personal_email": "personal@micorreo.com",
-      "city": "vitoria",
-      "active": false,
-      "imagen_url": "",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/176.jpeg",
       "created_date": "2021-08-03",
-      "num_hours_week": 12,
+      "num_hours_week": 34,
       "id_profesor": 2,
-      "branch": "Frontend",
-      "id": 2
+      "branch": "forntend"
     },
     {
-      "user": "alumno3",
-      "password": "31231323",
+      "id": 3,
+      "user": "dasdasds",
+      "password": "",
       "name": "Daniel",
       "surname": "Mesa Marín",
       "company_email": "damesamarin@gmail.com",
       "personal_email": "damesamarin@gmail.com",
       "city": "Logroño",
       "active": false,
-      "imagen_url": "",
-      "created_date": "2021-08-03",
-      "num_hours_week": 23,
-      "id_profesor": 1,
-      "branch": "fullstack",
-      "id": 3
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/590.jpeg",
+      "created_date": "",
+      "num_hours_week": "",
+      "id_profesor": "",
+      "branch": ""
     }
   ]
 }
