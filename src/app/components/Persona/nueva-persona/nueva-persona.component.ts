@@ -46,9 +46,7 @@ export class NuevaPersonaComponent implements OnInit {
   public submit(): void {
 
 
-    let persona: PersonaDTO = new PersonaDTO(null, this.personaForm.get('user').value, this.personaForm.get('password').value,
-      this.personaForm.get('surname').value, this.personaForm.get('company_email').value, this.personaForm.get('personal_email').value,
-      this.personaForm.get('city').value, this.personaForm.get('active').value, this.personaForm.get('created_Date').value, this.personaForm.get('imagen_url').value);
+    let persona: PersonaDTO = this.personaForm.value;
 
     persona = this.imagenpordefecto(persona);
 

@@ -1,0 +1,59 @@
+<div class="cuerpo">
+  <div class="hero">
+    <h1 class="hero_text">Aula virtual:</h1>
+    <h2 class="hero_text detail">alumnos</h2>
+  </div>
+  <div class="apuntes">
+    <div class="example-action-buttons">
+      <button mat-button (click)="accordion.openAll()" class="boton">Expand All</button>
+      <button mat-button (click)="accordion.closeAll()" class="boton">Collapse All</button>
+    </div>
+    <mat-accordion class="example-headers-align" multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Aula Virtual Alumnos
+          </mat-panel-title>
+          <mat-panel-description>
+            detalles informacion
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab at consectetur cumque,
+         delectus, deleniti earum excepturi exercitationem facere fugiat harum hic magnam neque nostrum,
+         officiis possimus ratione velit veniam voluptate.</p>
+
+      </mat-expansion-panel>
+      <mat-expansion-panel >
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            informacion detallada 2
+          </mat-panel-title>
+          <mat-panel-description>
+            detalles importantes
+          </mat-panel-description>
+
+        </mat-expansion-panel-header>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores dolorum ipsum nam possimus praesentium quis.
+          Accusantium animi, corporis delectus dolores eaque explicabo impedit itaque, necessitatibus, nisi rerum tempora vel veritatis!</p>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Información detallada 3
+          </mat-panel-title>
+          <mat-panel-description>
+            detalles importantes.
+
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, dicta eos, et eum harum necessitatibus,
+          nobis quae qui quisquam quod quos reiciendis similique veritatis. Adipisci earum illum unde. Odio, rerum?</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+  </div>
+</div>
+

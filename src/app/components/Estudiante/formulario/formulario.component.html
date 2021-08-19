@@ -1,0 +1,59 @@
+<div class="cuerpo">
+  <h1>Añadir estudiante</h1>
+  <form (ngSubmit)="createStudent()" class="formulario" [formGroup]="miformulario">
+    <mat-form-field class="campo">
+      <mat-label>Usuario</mat-label>
+      <input matInput type="text" formControlName="user" placeholder="Usuario">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="password" placeholder="password">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>nombre</mat-label>
+      <input matInput type="text" formControlName="name" placeholder="Nombre">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Apellidos</mat-label>
+      <input matInput type="text" formControlName="surname" placeholder="Apellidos">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Email empresa</mat-label>
+      <input matInput type="email" formControlName="company_email" placeholder="email de empresa">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Email personal</mat-label>
+      <input matInput type="email" formControlName="personal_email" placeholder="Email personal">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Ciudad</mat-label>
+      <input matInput type="text" formControlName="city" placeholder="Ciudad">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Fecha Creacion</mat-label>
+      <input matInput type="date" formControlName="created_date" placeholder="fecha de creacion">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Url de imagen</mat-label>
+      <input matInput type="url" formControlName="imagen_url" placeholder="Url de la imagen">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>numero horas por semana</mat-label>
+      <input matInput type="number" formControlName="num_hours_week" placeholder="numero de horas por semana">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Identificacion del profesor</mat-label>
+      <input matInput type="number" formControlName="id_profesor" placeholder="identificacion del profesor">
+    </mat-form-field>
+    <mat-form-field class="campo">
+      <mat-label>Rama</mat-label>
+      <input matInput type="text" formControlName="branch" placeholder="Rama">
+    </mat-form-field>
+
+    <button mat-button type="submit" class="boton" mat-raised-button color="primary">Crear</button>
+
+
+  </form>
+
+
+</div>

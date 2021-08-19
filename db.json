@@ -1,3 +1,54 @@
 {
-  "personas": []
+  "personas": [],
+
+  "estudiantes": [
+    {
+      "user": "ejemplo1",
+      "password": "adsdasd",
+      "name": "ejemplo1",
+      "surname": "de prueba",
+      "company_email": "empresa@correo.com",
+      "personal_email": "personal@correo.com",
+      "city": "soria",
+      "active": false,
+      "imagen_url": "",
+      "created_date": "2021-08-11",
+      "num_hours_week": 30,
+      "id_profesor": 3,
+      "branch": "backend",
+      "id": 1
+    },
+    {
+      "user": "alumno2",
+      "password": "1234",
+      "name": "alumno",
+      "surname": "aprendiz",
+      "company_email": "alumno@correo.com",
+      "personal_email": "personal@micorreo.com",
+      "city": "vitoria",
+      "active": false,
+      "imagen_url": "",
+      "created_date": "2021-08-03",
+      "num_hours_week": 12,
+      "id_profesor": 2,
+      "branch": "Frontend",
+      "id": 2
+    },
+    {
+      "user": "alumno3",
+      "password": "31231323",
+      "name": "Daniel",
+      "surname": "Mesa Marín",
+      "company_email": "damesamarin@gmail.com",
+      "personal_email": "damesamarin@gmail.com",
+      "city": "Logroño",
+      "active": false,
+      "imagen_url": "",
+      "created_date": "2021-08-03",
+      "num_hours_week": 23,
+      "id_profesor": 1,
+      "branch": "fullstack",
+      "id": 3
+    }
+  ]
 }
