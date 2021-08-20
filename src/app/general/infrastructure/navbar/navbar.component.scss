@@ -1,0 +1,38 @@
+*{
+    text-decoration: none;
+   color:aliceblue;
+
+
+
+}
+.titulo{
+  margin: 2vh;
+}
+.grid{
+    display: flex;
+    flex-direction: column;
+
+}
+.position{
+
+    position: fixed;
+    z-index: 9;
+}
+.barra{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+
+
+}
+.activo {
+  background-color: black;
+}
+
+
+.icono{
+    padding: 1.5vh;
+
+}
+
+

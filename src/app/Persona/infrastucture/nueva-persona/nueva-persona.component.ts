@@ -53,7 +53,7 @@ export class NuevaPersonaComponent implements OnInit {
 
     this.service.crearPersona(persona).subscribe((personacreada) => {
       this.alertaService.crearAlerta(personacreada.id, "creado", "Persona");
-      this.router.navigate(['/']);
+      this.router.navigate(['personas/list']);
     });
 
   }
@@ -64,7 +64,7 @@ export class NuevaPersonaComponent implements OnInit {
     persona = this.imagenpordefecto(persona);
 
     this.service.actualizar(persona).subscribe(actualizar => this.alertaService.crearAlerta(actualizar.id, "Actualizado", "Persona"));
-    this.router.navigate(['/listar'])
+    this.router.navigate(['personas/list'])
 
 
   }
@@ -72,7 +72,7 @@ export class NuevaPersonaComponent implements OnInit {
   public borrarPersona(persona: PersonaDTO): void {
     let id: number = persona.id;
     this.service.borrarPersona(persona.id).subscribe(persona => this.alertaService.crearAlerta(id, "borrado", "Persona"))
-      .add(() => this.router.navigate(['/listar']))
+      .add(() => this.router.navigate(['/list']))
       .unsubscribe();
 
   }

@@ -7,6 +7,8 @@ import {FormularioComponent} from "../formulario/formulario.component";
 import {DetallesComponent} from "../detalles/detalles.component";
 import {AlertasService} from "../../../general/aplication/alertas/alertas.service";
 import {ServicioDatosService} from "../../aplication/servicio-datos.service";
+import {DataSource} from "@angular/cdk/collections";
+import {calcPossibleSecurityContexts} from "@angular/compiler/src/template_parser/binding_parser";
 
 
 @Component({
@@ -20,9 +22,16 @@ export class ListComponent {
 
   public displayedColumns: string[] = ['id', 'name', 'company_email', 'surname', 'id_profesor', 'branch', 'num_hours_week', 'acciones'];
   public dataSource: MatTableDataSource<EstudianteOutput>;
+  public estudiantes:EstudianteOutput[]=[];
 
-  constructor(private estudianteService: EstudiantesService, private dialog: MatDialog, private alertService: AlertasService) {
+  constructor(private estudianteService: EstudiantesService, private dialog: MatDialog,
+              private alertService: AlertasService, private datosService: ServicioDatosService) {
+
+    this.dataSource=new MatTableDataSource(this.estudiantes);
+
     this.cargardatos();
+    this.datosService.datosactualizados();
+
   }
 
 
@@ -48,7 +57,7 @@ export class ListComponent {
     configuracion.autoFocus = true;
     configuracion.width = "60%";
     configuracion.data = estudiante;
-    this.dialog.open(FormularioComponent, configuracion).afterClosed().subscribe(() => this.cargardatos());
+    this.dialog.open(FormularioComponent, configuracion).afterClosed().subscribe(() => console.log("holiiii"));
 
 
   }
@@ -62,8 +71,11 @@ export class ListComponent {
   }
 
   public cargardatos(): void {
-    this.estudianteService.getEstudiantes().subscribe(estudiastes => {
-      this.dataSource = new MatTableDataSource(estudiastes);
-    });
+
+    this.datosService.getEmiterEstudiantes().subscribe(estudiantes => {
+
+       this.dataSource.data=estudiantes;
+      },
+      err => console.error(err));
   }
 }

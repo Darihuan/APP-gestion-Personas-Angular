@@ -1,0 +1,19 @@
+<div class="cuerpo">
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" class="sidenav" color="primary" [opened]="condicion">
+      <div *ngFor="let alerta of this.alertas">
+        <app-alert-card
+          [alerta]="alerta" (alertaborrar)="deleteAlert($event)"
+        ></app-alert-card>
+
+
+      </div>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+</div>

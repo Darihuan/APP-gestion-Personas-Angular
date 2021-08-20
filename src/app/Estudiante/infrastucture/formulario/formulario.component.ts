@@ -6,6 +6,7 @@ import {MatDialogRef} from "@angular/material/dialog";
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {AlertasService} from "../../../general/aplication/alertas/alertas.service";
 import {PersonaDTO} from "../../../Persona/model/PersonaDTO";
+import {ServicioDatosService} from "../../aplication/servicio-datos.service";
 
 @Component({
   selector: 'app-formulario',
@@ -17,7 +18,8 @@ export class FormularioComponent {
   public actualizar: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private estudianteService: EstudiantesService,
-              private formRef: MatDialogRef<FormularioComponent>, @Inject(MAT_DIALOG_DATA) public data: any, private alertService: AlertasService) {
+              private formRef: MatDialogRef<FormularioComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
+              private alertService: AlertasService, private dataService: ServicioDatosService) {
     this.miformulario = this.iniciarFormulario();
 
     if (this.data != undefined) {
@@ -33,8 +35,9 @@ export class FormularioComponent {
 
     this.estudianteService.saveEstudiante(estudiate).subscribe((creado) => {
       this.formRef.close();
-
+      this.dataService.datosactualizados()
       this.alertService.crearAlerta(creado.id, "creado", "Estudiante");
+
     });
 
 
@@ -72,8 +75,10 @@ export class FormularioComponent {
 
     this.estudianteService.updateStudent(estudiate).subscribe((actualizado) => {
       this.formRef.close();
-
+      this.dataService.datosactualizados()
       this.alertService.crearAlerta(actualizado.id, "actualizado", "Estudiante");
+    }, (err) => {
+      console.error(err);
     })
   }
 

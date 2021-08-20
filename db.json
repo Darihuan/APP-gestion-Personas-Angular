@@ -1,37 +1,106 @@
 {
-  "personas": [],
-  "estudiantes": [
+  "personas": [
     {
-      "id": 2,
-      "user": "Luna",
-      "password": "dsdasdasd",
-      "name": "Luna ",
-      "surname": "María Pere",
-      "company_email": "email@company.com",
-      "personal_email": "personal@email.com",
-      "city": "burgos",
-      "active": false,
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/176.jpeg",
-      "created_date": "2021-08-03",
-      "num_hours_week": 34,
-      "id_profesor": 2,
-      "branch": "forntend"
-    },
-    {
-      "id": 3,
-      "user": "dasdasds",
-      "password": "",
-      "name": "Daniel",
-      "surname": "Mesa Marín",
+      "id": 1,
+      "user": "darihuan",
+      "password": "2242334",
+      "surname": "Mesa Arango",
       "company_email": "damesamarin@gmail.com",
       "personal_email": "damesamarin@gmail.com",
       "city": "Logroño",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/577.jpeg",
+      "active": true,
+      "created_Date": ""
+    },
+    {
+      "id": 2,
+      "user": "Persona2",
+      "password": "54321",
+      "surname": "apellidoejemplo",
+      "company_email": "sxxxxn@gmail.com",
+      "personal_email": "yyyyyyy@gmail.com",
+      "city": "jaen",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/292.jpeg",
       "active": false,
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/590.jpeg",
+      "created_Date": ""
+    },
+    {
+      "id": 3,
+      "user": "Persona3",
+      "password": "6543",
+      "surname": "tercera",
+      "company_email": "empresa@email.com",
+      "personal_email": "personal@email.com",
+      "city": "Londres",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/360.jpeg",
+      "active": true,
+      "created_Date": "2021-08-18"
+    }
+  ],
+  "estudiantes": [
+    {
+      "id": 1,
+      "user": "Cristina",
+      "password": "23123112",
+      "name": "Cristina",
+      "surname": "Martínez",
+      "company_email": "BBBBBBBB@gmail.com",
+      "personal_email": "AAAAAAAAA@gmail.com",
+      "city": "Madrid",
+      "active": false,
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/453.jpeg",
       "created_date": "",
-      "num_hours_week": "",
-      "id_profesor": "",
-      "branch": ""
+      "num_hours_week": 45,
+      "id_profesor": 1,
+      "branch": "FrontEnd"
+    },
+    {
+      "id": 2,
+      "user": "Pablo",
+      "password": "12312413",
+      "name": "Pablo",
+      "surname": "de Ejemplo",
+      "company_email": "ejemplo@gmail..com",
+      "personal_email": "personal@gmail.com",
+      "city": "Lilliput",
+      "active": false,
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/158.jpeg",
+      "created_date": "2021-08-21",
+      "num_hours_week": 12,
+      "id_profesor": 0,
+      "branch": "FullStack"
+    },
+    {
+      "id": 3,
+      "user": "SuperProgramador",
+      "password": "123",
+      "name": "Soyun",
+      "surname": "Pro",
+      "company_email": "pro@Email.com",
+      "personal_email": "Casa@email.com",
+      "city": "París",
+      "active": false,
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/509.jpeg",
+      "created_date": "2021-08-03",
+      "num_hours_week": 30,
+      "id_profesor": 2,
+      "branch": "BackEnd"
+    },
+    {
+      "id": 4,
+      "user": "Ana",
+      "password": "765432",
+      "name": "Ana",
+      "surname": "Marín",
+      "company_email": "an@gmail.com",
+      "personal_email": "per@email.com",
+      "city": "Barcelona",
+      "active": false,
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/352.jpeg",
+      "created_date": "2021-08-03",
+      "num_hours_week": 34,
+      "id_profesor": 5,
+      "branch": "FrontEnd"
     }
   ]
 }

@@ -1,6 +1,6 @@
 <mat-card class="example-card" >
     <mat-card-header>
-     
+
       <mat-card-title><span class="info">user: </span>{{persona.user}}</mat-card-title>
       <mat-card-subtitle><span class="info">company_email </span>{{persona.company_email}}</mat-card-subtitle>
     </mat-card-header>
@@ -15,7 +15,7 @@
       <mat-card-subtitle><span class="info">termination_Date </span>{{persona.termination_Date}}</mat-card-subtitle>
     </mat-card-content>
     <div class="actions">
-      <button mat-stroked-button  routerLink= "/actualizar/{{persona.id}}">Actualizar</button>
+      <button mat-stroked-button  routerLink= "../actualizar/{{persona.id}}">Actualizar</button>
       <button mat-stroked-button color="warn" (click)="borrarPersona(persona)" >borrar</button>
     </div>
   </mat-card>

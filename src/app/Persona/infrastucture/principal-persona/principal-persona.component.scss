@@ -1,0 +1,66 @@
+
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+
+  height: 100vh;
+
+
+  background: linear-gradient(to right, rgba(#eeeff1, 0.5), rgba(#eeeff1, 0.3)), #d0b04f;
+
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.hero {
+  width: 100%;
+  background: linear-gradient(to right, rgba(gray, 0.2), rgba(gray, 0.2)),
+  url("https://cdn.bizneo.com/blog/wp-content/uploads/2020/09/gestion-del-tiempo-810x455.jpg");
+  height: 60vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+}
+
+.hero_text {
+
+  padding: 4vh;
+  color: #eeeff1;
+  font-weight: bold;
+  font-size: 12vh;
+
+}
+
+.detail {
+  color: darkorange;
+}
+
+.apuntes {
+  margin: 3vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 20vh;
+
+
+}
+
+.boton {
+  border-radius: 5px;
+  padding: 1vh;
+  margin: 1vh;
+}
+
+
+
+
+

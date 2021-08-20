@@ -1,0 +1,13 @@
+
+<mat-card class="alerta" >
+  <mat-card-header>
+
+    <mat-card-title><span class="info">{{alerta.tipoPersona}}  {{alerta.tipo}}</span></mat-card-title>
+    <mat-icon (click)="deleteAlert(alerta)" class="borrar">delete</mat-icon>
+
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>{{alerta.mensaje}}</p>
+  </mat-card-content>
+</mat-card>

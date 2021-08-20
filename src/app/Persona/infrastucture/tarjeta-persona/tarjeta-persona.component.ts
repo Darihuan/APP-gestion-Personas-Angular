@@ -28,14 +28,17 @@ export class TarjetaPersonaComponent {
   /*metodos*/
 
   public borrarPersona(persona: PersonaOutput): void {
-    let id:number=persona.id;
+    let id: number = persona.id;
     this.service.borrarPersona(persona.id)
       .subscribe((borrado) => {
+          this.borrado.emit(persona);
+          this.alertaService.crearAlerta(id, "borrado", "Persona")
+        }, (err) => {
+          console.log(err);
+        }
+      )
 
-        this.alertaService.crearAlerta(id, "borrado","Persona")
-      })
 
-    this.borrado.emit(persona);
   }
 
 

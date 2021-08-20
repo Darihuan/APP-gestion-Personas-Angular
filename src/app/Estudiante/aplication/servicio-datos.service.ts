@@ -8,14 +8,25 @@ import {EstudiantesService} from "./estudiantes.service";
 export class ServicioDatosService {
 
   private estudiantes: EstudianteOutput[];
-  private eventodatos: EventEmitter<EstudianteOutput[]>;
+  private eventoDatos: EventEmitter<EstudianteOutput[]>;
 
   constructor(private Serviceestudiantes: EstudiantesService) {
+    this.estudiantes=[];
+    this.eventoDatos = new EventEmitter<EstudianteOutput[]>();
+  }
+
+  public datosactualizados(): void {
+    this.Serviceestudiantes.getEstudiantes().subscribe(datosEstudiantes=>{
+      console.log(datosEstudiantes)
+      this.estudiantes=datosEstudiantes;
+      this.eventoDatos.emit(this.estudiantes);
+    })
+
 
   }
 
-  public datosactualizados(): EventEmitter<EstudianteOutput[]> {
-    return this.eventodatos;
+  public getEmiterEstudiantes(): EventEmitter<EstudianteOutput[]> {
+    return this.eventoDatos;
   }
 
 }
