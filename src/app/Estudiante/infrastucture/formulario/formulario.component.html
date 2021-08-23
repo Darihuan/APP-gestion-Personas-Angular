@@ -1,7 +1,6 @@
 <div class="cuerpo">
-  <h1 *ngIf="!actualizar">Añadir estudiante</h1>
-  <h1 *ngIf="actualizar">Modificar estudiante</h1>
-  <form  class="formulario" [formGroup]="miformulario">
+  <h1>{{actualizar ? "Modificar estudiante" : "Añadir estudiante"}}</h1>
+  <form class="formulario" [formGroup]="miformulario">
 
     <mat-form-field class="campo">
       <mat-label>Usuario</mat-label>
@@ -52,8 +51,15 @@
       <input matInput type="text" formControlName="branch" placeholder="Rama">
     </mat-form-field>
 
-    <button mat-button (click)="createStudent()" class="boton" mat-raised-button color="primary" *ngIf="!actualizar">Crear</button>
-    <button mat-button (click)="updateStudent()"  class="boton" mat-raised-button color="primary" *ngIf="actualizar">modificar</button>
+    <button mat-button (click)="createStudent()" class="boton" mat-raised-button color="primary" *ngIf="!actualizar else botonesActualizar">
+      Crear
+    </button>
+    <ng-template #botonesActualizar>
+      <button mat-button (click)="updateStudent()" class="boton" mat-raised-button color="primary" *ngIf="actualizar">
+        modificar
+      </button>
+    </ng-template>
+
 
 
   </form>

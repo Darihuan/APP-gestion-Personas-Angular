@@ -3,9 +3,9 @@
   <mat-toolbar color="primary" class="position">
     <mat-toolbar-row class="barra">
       <div>
-        <a class="titulo" routerLink="/">CRUD PERSONAS</a>
-        <a mat-raised-button color="primary" routerLink="personas/home" routerLinkActive="activo" class="rutas">Area Personas</a>
-        <a mat-raised-button color="primary" routerLink="estudiantes/home"  routerLinkActive="activo" class="rutas">Area Estudiantes</a>
+        <a class="titulo" [routerLink]="['/']">CRUD PERSONAS</a>
+        <a mat-raised-button color="primary" [routerLink]="['personas/home']" [routerLinkActive]="['activo']" class="rutas">Area Personas</a>
+        <a mat-raised-button color="primary" [routerLink]="['estudiantes/home']"  [routerLinkActive]="['activo']" class="rutas">Area Estudiantes</a>
 
       </div>
       <div>

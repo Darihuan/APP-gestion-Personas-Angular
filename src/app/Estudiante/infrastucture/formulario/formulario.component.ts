@@ -13,20 +13,21 @@ import {ServicioDatosService} from "../../aplication/servicio-datos.service";
   templateUrl: './formulario.component.html',
   styleUrls: ['./formulario.component.scss']
 })
-export class FormularioComponent {
+export class FormularioComponent implements OnInit{
   public miformulario: FormGroup;
   public actualizar: boolean = false;
 
   constructor(private formBuilder: FormBuilder, private estudianteService: EstudiantesService,
               private formRef: MatDialogRef<FormularioComponent>, @Inject(MAT_DIALOG_DATA) public data: any,
               private alertService: AlertasService, private dataService: ServicioDatosService) {
-    this.miformulario = this.iniciarFormulario();
 
+  }
+  ngOnInit():void {
+    this.miformulario = this.iniciarFormulario();
     if (this.data != undefined) {
       this.cargardatos(this.data);
       this.actualizar = true;
     }
-
   }
 
   public createStudent(): void {

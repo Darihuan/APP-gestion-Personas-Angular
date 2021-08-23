@@ -25,16 +25,40 @@
       "created_Date": ""
     },
     {
-      "id": 3,
-      "user": "Persona3",
-      "password": "6543",
-      "surname": "tercera",
-      "company_email": "empresa@email.com",
-      "personal_email": "personal@email.com",
-      "city": "Londres",
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/360.jpeg",
-      "active": true,
-      "created_Date": "2021-08-18"
+      "id": 4,
+      "user": "darihuan",
+      "password": "dasdasdsadsad",
+      "surname": "Mesa Arango",
+      "company_email": "damesamarin@gmail.com",
+      "personal_email": "damesamarin@gmail.com",
+      "city": "Logroño",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/111.jpeg",
+      "active": false,
+      "created_Date": ""
+    },
+    {
+      "id": 6,
+      "user": "",
+      "password": "",
+      "surname": "",
+      "company_email": "",
+      "personal_email": "",
+      "city": "",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/391.jpeg",
+      "active": false,
+      "created_Date": ""
+    },
+    {
+      "id": 7,
+      "user": "",
+      "password": "",
+      "surname": "",
+      "company_email": "",
+      "personal_email": "",
+      "city": "",
+      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/166.jpeg",
+      "active": false,
+      "created_Date": ""
     }
   ],
   "estudiantes": [
@@ -51,7 +75,7 @@
       "imagen_url": "https://rickandmortyapi.com/api/character/avatar/453.jpeg",
       "created_date": "",
       "num_hours_week": 45,
-      "id_profesor": 1,
+      "id_profesor": 2,
       "branch": "FrontEnd"
     },
     {
@@ -85,22 +109,6 @@
       "num_hours_week": 30,
       "id_profesor": 2,
       "branch": "BackEnd"
-    },
-    {
-      "id": 4,
-      "user": "Ana",
-      "password": "765432",
-      "name": "Ana",
-      "surname": "Marín",
-      "company_email": "an@gmail.com",
-      "personal_email": "per@email.com",
-      "city": "Barcelona",
-      "active": false,
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/352.jpeg",
-      "created_date": "2021-08-03",
-      "num_hours_week": 34,
-      "id_profesor": 5,
-      "branch": "FrontEnd"
     }
   ]
 }

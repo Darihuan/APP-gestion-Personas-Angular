@@ -15,7 +15,7 @@
       <mat-card-subtitle><span class="info">termination_Date </span>{{persona.termination_Date}}</mat-card-subtitle>
     </mat-card-content>
     <div class="actions">
-      <button mat-stroked-button  routerLink= "../actualizar/{{persona.id}}">Actualizar</button>
+      <button mat-stroked-button  [routerLink]= "['../actualizar/'+persona.id]">Actualizar</button>
       <button mat-stroked-button color="warn" (click)="borrarPersona(persona)" >borrar</button>
     </div>
   </mat-card>

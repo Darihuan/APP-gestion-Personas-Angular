@@ -11,14 +11,13 @@ export class ServicioDatosService {
   private eventoDatos: EventEmitter<EstudianteOutput[]>;
 
   constructor(private Serviceestudiantes: EstudiantesService) {
-    this.estudiantes=[];
+    this.estudiantes = [];
     this.eventoDatos = new EventEmitter<EstudianteOutput[]>();
   }
 
   public datosactualizados(): void {
-    this.Serviceestudiantes.getEstudiantes().subscribe(datosEstudiantes=>{
-      console.log(datosEstudiantes)
-      this.estudiantes=datosEstudiantes;
+    this.Serviceestudiantes.getEstudiantes().subscribe(datosEstudiantes => {
+      this.estudiantes = datosEstudiantes;
       this.eventoDatos.emit(this.estudiantes);
     })
 

@@ -8,15 +8,18 @@ import {AlertasService} from "../../aplication/alertas/alertas.service";
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
   /*variables*/
   condicion: boolean;
   alertas: Alerta[] = [];
 
 
   constructor(private service: PersonaService) {
-    this.contadoralertas(JSON.parse(localStorage.getItem('alertas')));
 
+  }
+
+  ngOnInit(): void {
+    this.contadoralertas(JSON.parse(localStorage.getItem('alertas')));
   }
 
 

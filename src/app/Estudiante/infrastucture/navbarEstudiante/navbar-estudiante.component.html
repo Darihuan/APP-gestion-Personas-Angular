@@ -2,13 +2,13 @@
   <mat-sidenav-container>
     <mat-sidenav #sidenav mode="side" class="navegation" [opened]="true">
       <div>
-        <a routerLinkActive="active" routerLink="home" class="icon">
+        <a routerLinkActive="active" [routerLink]="['home']" class="icon">
           <mat-icon class="size">home</mat-icon>
         </a>
         <a routerLinkActive="active" (click)="create()" class="icon">
           <mat-icon class="size">person_add</mat-icon>
         </a>
-        <a routerLinkActive="active" routerLink="list" class="icon">
+        <a routerLinkActive="active" [routerLink]="['list']" class="icon">
           <mat-icon class="size">list</mat-icon>
         </a>
       </div>

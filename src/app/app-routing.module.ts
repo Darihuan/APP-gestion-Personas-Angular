@@ -3,7 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 
 import {ListarComponent} from './Persona/infrastucture/listar/listar.component';
 import {PrincipalComponent} from './general/infrastructure/principal/principal.component';
-import {NuevaPersonaComponent} from "./Persona/infrastucture/nueva-persona/nueva-persona.component";
+import {FormPersonaComponent} from "./Persona/infrastucture/form-persona/form-persona.component";
 import {ListComponent} from "./Estudiante/infrastucture/list/list.component";
 import {PrincipalEstudianteComponent} from "./Estudiante/infrastucture/principalEstudiante/principal.component";
 import {NavbarComponent} from "./general/infrastructure/navbar/navbar.component";
@@ -20,8 +20,8 @@ const routes: Routes = [
       {
         path: "personas", component: PersonaNavBarComponent, children: [
           {path: "home", component: PrincipalPersonaComponent},
-          {path: "crear", component: NuevaPersonaComponent},
-          {path: "actualizar/:id", component: NuevaPersonaComponent},
+          {path: "crear", component: FormPersonaComponent},
+          {path: "actualizar/:id", component: FormPersonaComponent},
           {path: "list", component: ListarComponent}
         ]
       },
@@ -37,7 +37,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{paramsInheritanceStrategy:"always"})],
   exports: [RouterModule]
 })
 export class AppRoutingModule {

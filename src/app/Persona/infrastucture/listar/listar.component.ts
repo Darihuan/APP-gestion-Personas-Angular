@@ -1,10 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
-import { PersonaOutput } from '../../model/PersonaDTOOutput';
-import { Router } from '@angular/router';
-import { PersonaService } from 'src/app/Persona/aplication/persona.service';
-import { PersonaDTO } from 'src/app/Persona/model/PersonaDTO';
-
+import {PersonaOutput} from '../../model/PersonaDTOOutput';
+import {Router} from '@angular/router';
+import {PersonaService} from 'src/app/Persona/aplication/persona.service';
+import {PersonaDTO} from 'src/app/Persona/model/PersonaDTO';
 
 
 @Component({
@@ -14,30 +13,27 @@ import { PersonaDTO } from 'src/app/Persona/model/PersonaDTO';
 })
 export class ListarComponent implements OnInit {
   /*variables*/
-  public personas:PersonaOutput[];
+  public personas: PersonaOutput[];
 
-  constructor(private service:PersonaService,public router:Router) {
-    this.personas=[];
+  constructor(private service: PersonaService, public router: Router) {
+    this.personas = [];
   }
 
   ngOnInit(): void {
-      this.service.getPersonas().subscribe(personaServer=>this.personas=personaServer)
+    this.getPersonas();
   }
 
 
+  /*metodos*/
 
-
-   /*metodos*/
-
-  public recibirmensajePersona($event:PersonaDTO):void{
-    let arraytemporal=this.personas.filter(elemento=>elemento!=$event)
-    this.personas=arraytemporal;
+  public recibirmensajePersona($event: PersonaDTO): void {
+    let arraytemporal = this.personas.filter(elemento => elemento != $event)
+    this.personas = arraytemporal;
   }
 
-
-
-
-
+  private getPersonas(): void {
+    this.service.getPersonas().subscribe(personaServer => this.personas = personaServer, err => console.log(err));
+  }
 
 
 }

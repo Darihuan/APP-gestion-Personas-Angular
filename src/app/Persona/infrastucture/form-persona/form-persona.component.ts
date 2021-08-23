@@ -9,20 +9,64 @@ import {AlertasService} from "../../../general/aplication/alertas/alertas.servic
 
 @Component({
   selector: 'app-nueva-persona',
-  templateUrl: './nueva-persona.component.html',
-  styleUrls: ['./nueva-persona.component.scss']
+  templateUrl: './form-persona.component.html',
+  styleUrls: ['./form-persona.component.scss']
 })
-export class NuevaPersonaComponent implements OnInit {
+export class FormPersonaComponent implements OnInit {
   /*variables*/
   public personaActualizar: PersonaOutput;
   public personaForm: FormGroup;
-  public condicion: boolean;
+  public crearPersona: boolean;
 
 
   constructor(private formBuilder: FormBuilder, private service: PersonaService, public router: Router,
               private rutaActiva: ActivatedRoute, private alertaService: AlertasService) {
-    this.condicion = true;
-    this.personaForm = this.formBuilder.group({
+    this.crearPersona = true;
+
+  }
+
+  ngOnInit(): void {
+      this.cargarpersona(this.rutaActiva.snapshot.params.id);
+    this.personaForm = this.iniciarForm();
+  }
+
+
+  /*metodos*/
+
+  public submit(): void {
+
+    let persona: PersonaOutput = this.personaForm.value;
+
+    persona = this.imagenpordefecto(persona);
+
+    this.service.crearPersona(persona).subscribe((personacreada) => {
+      this.alertaService.crearAlerta(personacreada.id, "creado", "Persona");
+      this.router.navigate(['personas/list']);
+    },err=>console.error(err));
+
+  }
+
+  public update(): void {
+
+    let persona: PersonaOutput = this.personaForm.value;
+    persona = this.imagenpordefecto(persona);
+
+    this.service.actualizar(persona).subscribe(actualizar => this.alertaService.crearAlerta(actualizar.id, "Actualizado", "Persona"),err=>console.error(err));
+    this.router.navigate(['personas/list'])
+
+
+  }
+
+  public delete(persona: PersonaDTO): void {
+    let id: number = persona.id;
+    this.service.borrarPersona(persona.id).subscribe(persona => this.alertaService.crearAlerta(id, "borrado", "Persona"),err=>console.error(err))
+      .add(() => this.router.navigate(['/list']))
+      .unsubscribe();
+
+  }
+
+  public iniciarForm(): FormGroup {
+    return this.personaForm = this.formBuilder.group({
       'id': [''],
       'user': [''],
       'password': [''],
@@ -34,60 +78,6 @@ export class NuevaPersonaComponent implements OnInit {
       'active': [false],
       'created_Date': ['']
     });
-  }
-
-  ngOnInit(): void {
-    this.cargarpersona(this.rutaActiva.snapshot.params.id);
-
-  }
-
-
-  /*metodos*/
-
-  public submit(): void {
-
-
-    let persona: PersonaOutput = this.personaForm.value;
-
-    persona = this.imagenpordefecto(persona);
-
-    this.service.crearPersona(persona).subscribe((personacreada) => {
-      this.alertaService.crearAlerta(personacreada.id, "creado", "Persona");
-      this.router.navigate(['personas/list']);
-    });
-
-  }
-
-  public update(): void {
-
-    let persona:PersonaOutput = this.personaForm.value;
-    persona = this.imagenpordefecto(persona);
-
-    this.service.actualizar(persona).subscribe(actualizar => this.alertaService.crearAlerta(actualizar.id, "Actualizado", "Persona"));
-    this.router.navigate(['personas/list'])
-
-
-  }
-
-  public borrarPersona(persona: PersonaDTO): void {
-    let id: number = persona.id;
-    this.service.borrarPersona(persona.id).subscribe(persona => this.alertaService.crearAlerta(id, "borrado", "Persona"))
-      .add(() => this.router.navigate(['/list']))
-      .unsubscribe();
-
-  }
-
-  public refrescar(): void {
-    this.personaForm.patchValue({
-      'user': [''],
-      'password': [''],
-      'surname': [''],
-      'company_email': [''],
-      'personal_email': [''],
-      'city': [''],
-      'active': [false],
-      'created_Date': ['']
-    })
   }
 
   public imagenpordefecto(comprobar: PersonaOutput): PersonaOutput {
@@ -107,9 +97,9 @@ export class NuevaPersonaComponent implements OnInit {
 
     this.service.getPersonasById(this.rutaActiva.snapshot.params.id).subscribe(persona => {
       this.personaForm.patchValue(persona);
-      this.condicion=!this.condicion;
+      this.crearPersona = !this.crearPersona;
 
-    });
+    },err=>console.log("formulario en modo crear"));
   }
 
 

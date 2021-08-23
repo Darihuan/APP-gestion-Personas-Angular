@@ -1,0 +1,84 @@
+<div class="general">
+  <div class="contenedor">
+
+    <form id="formulario" (submit)="submit()" [formGroup]="personaForm">
+      <div>
+        <h1 class="botones">{{crearPersona ? "Crear Persona" : "Actualizar Datos Persona:"}}</h1>
+      </div>
+
+      <div class="campo">
+
+        <label for="user" class="form-label">Nombre de usuario:</label>
+        <input class="formulario" type="text" id="user" required placeholder="Nombre de Usuario" formControlName="user">
+      </div>
+
+      <div class="campo">
+        <label for="password" class="form-label">Contraseña:</label>
+        <input class="formulario" type="password" id="password" required autocomplete="new-password"
+               placeholder="password" formControlName="password">
+      </div>
+
+      <div class="campo">
+        <label for="surname" class="form-label">Surname:</label>
+        <input class="formulario" type="text" id="surname" required placeholder="surname" formControlName="surname">
+      </div>
+
+
+      <div class="campo">
+        <label for="company_email" class="form-label">Company email</label>
+        <input class="formulario" type="email" id="company_email" required placeholder="Company Email"
+               formControlName="company_email">
+      </div>
+
+
+      <div class="campo">
+        <label for="personal_email" class="form-label">Personal email</label>
+        <input class="formulario" type="email" id="personal_email" required placeholder="Personal Email"
+               formControlName="personal_email">
+      </div>
+
+
+      <div class="campo">
+        <label for="city" class="form-label">City </label>
+
+        <input class="formulario" type="text" id="city" required placeholder="City" formControlName="city">
+      </div>
+      <div class="campo">
+        <label for="imagen_url" class="form-label">imagen url </label>
+
+        <input class="formulario" type="text" id="imagen_url" required placeholder="url imagen"
+               formControlName="imagen_url">
+      </div>
+
+
+      <div class="campo">
+        <label for="active" class="form-label">Active</label>
+
+        <input class="formulario" type="checkbox" id="active" formControlName="active">
+
+      </div>
+
+
+      <div class="campo">
+        <label for="created_Date" class="form-label">created_Date</label>
+
+        <input class="formulario" type="date" id="created_Date" required formControlName="created_Date">
+      </div>
+      <button *ngIf="crearPersona else actualizar" class="boton" type="submit">Enviar</button>
+
+      <ng-template #actualizar>
+        <div class="botones">
+          <button  mat-stroked-button (click)="update()">Actualizar</button>
+          <button  mat-stroked-button color="warn" (click)="delete(personaActualizar)">borrar
+          </button>
+        </div>
+      </ng-template>
+    </form>
+  </div>
+
+
+</div>
+
+
+
+

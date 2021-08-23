@@ -18,20 +18,23 @@ import {calcPossibleSecurityContexts} from "@angular/compiler/src/template_parse
 })
 
 
-export class ListComponent {
+export class ListComponent implements OnInit {
 
   public displayedColumns: string[] = ['id', 'name', 'company_email', 'surname', 'id_profesor', 'branch', 'num_hours_week', 'acciones'];
   public dataSource: MatTableDataSource<EstudianteOutput>;
-  public estudiantes:EstudianteOutput[]=[];
+  public estudiantes: EstudianteOutput[] = [];
 
   constructor(private estudianteService: EstudiantesService, private dialog: MatDialog,
               private alertService: AlertasService, private datosService: ServicioDatosService) {
 
-    this.dataSource=new MatTableDataSource(this.estudiantes);
+    this.dataSource = new MatTableDataSource(this.estudiantes);
 
+
+  }
+
+  ngOnInit(): void {
     this.cargardatos();
     this.datosService.datosactualizados();
-
   }
 
 
@@ -57,7 +60,7 @@ export class ListComponent {
     configuracion.autoFocus = true;
     configuracion.width = "60%";
     configuracion.data = estudiante;
-    this.dialog.open(FormularioComponent, configuracion).afterClosed().subscribe(() => console.log("holiiii"));
+    this.dialog.open(FormularioComponent, configuracion).afterClosed().subscribe();
 
 
   }
@@ -74,7 +77,7 @@ export class ListComponent {
 
     this.datosService.getEmiterEstudiantes().subscribe(estudiantes => {
 
-       this.dataSource.data=estudiantes;
+        this.dataSource.data = estudiantes;
       },
       err => console.error(err));
   }

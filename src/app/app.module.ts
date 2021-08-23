@@ -8,12 +8,18 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 
 /*componentes*/
-import {NuevaPersonaComponent} from "./Persona/infrastucture/nueva-persona/nueva-persona.component";
+import {FormPersonaComponent} from "./Persona/infrastucture/form-persona/form-persona.component";
 import {ListarComponent} from './Persona/infrastucture/listar/listar.component';
 import {NavbarComponent} from './general/infrastructure/navbar/navbar.component';
-
 import {PrincipalComponent} from './general/infrastructure/principal/principal.component';
 import {TarjetaPersonaComponent} from './Persona/infrastucture/tarjeta-persona/tarjeta-persona.component';
+import {DetallesComponent} from './Estudiante/infrastucture/detalles/detalles.component';
+import {SidebarComponent} from './general/infrastructure/sidebar/sidebar.component';
+import {AlertCardComponent} from './general/infrastructure/alert-card/alert-card.component';
+import {NavbarEstudianteComponent} from "./Estudiante/infrastucture/navbarEstudiante/navbar-estudiante.component";
+import { PersonaNavBarComponent } from './Persona/infrastucture/persona-nav-bar/persona-nav-bar.component';
+import {PrincipalPersonaComponent} from "./Persona/infrastucture/principal-persona/principal-persona.component";
+
 
 
 /*angular meterials*/
@@ -35,12 +41,7 @@ import {PrincipalEstudianteComponent} from "./Estudiante/infrastucture/principal
 import {MatExpansionModule} from "@angular/material/expansion";
 import {MatDialogModule} from "@angular/material/dialog";
 import {MatInputModule} from "@angular/material/input";
-import {DetallesComponent} from './Estudiante/infrastucture/detalles/detalles.component';
-import {SidebarComponent} from './general/infrastructure/sidebar/sidebar.component';
-import {AlertCardComponent} from './general/infrastructure/alertc-card/alert-card.component';
-import {NavbarEstudianteComponent} from "./Estudiante/infrastucture/navbarEstudiante/navbar-estudiante.component";
-import { PersonaNavBarComponent } from './Persona/infrastucture/persona-nav-bar/persona-nav-bar.component';
-import {PrincipalPersonaComponent} from "./Persona/infrastucture/principal-persona/principal-persona.component";
+import { PersonaModule } from './Persona/persona.module';
 
 
 
@@ -51,7 +52,7 @@ import {PrincipalPersonaComponent} from "./Persona/infrastucture/principal-perso
     ListarComponent,
     TarjetaPersonaComponent,
     NavbarComponent,
-    NuevaPersonaComponent,
+    FormPersonaComponent,
     ListComponent,
     FormularioComponent,
     PrincipalEstudianteComponent,
@@ -86,7 +87,8 @@ import {PrincipalPersonaComponent} from "./Persona/infrastucture/principal-perso
     MatExpansionModule,
     MatDialogModule,
     MatInputModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    PersonaModule
 
 
   ],

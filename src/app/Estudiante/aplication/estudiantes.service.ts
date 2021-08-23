@@ -23,12 +23,12 @@ export class EstudiantesService {
     return this.httpClient.get<EstudianteOutput[]>(this.apiUrl);
   }
 
-  deleteEstudiante(id: number): Observable<any> {
+  public deleteEstudiante(id: number): Observable<any> {
     return this.httpClient.delete(this.apiUrl + id);
 
   }
 
-  updateStudent(estudiante: EstudianteOutput): Observable<EstudianteOutput> {
+  public updateStudent(estudiante: EstudianteOutput): Observable<EstudianteOutput> {
     return this.httpClient.put<EstudianteOutput>(this.apiUrl + estudiante.id, estudiante);
   }
 }

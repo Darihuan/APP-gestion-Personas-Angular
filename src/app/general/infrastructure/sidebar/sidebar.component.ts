@@ -7,7 +7,7 @@ import {AlertasService} from "../../aplication/alertas/alertas.service";
   templateUrl: './sidebar.component.html',
   styleUrls: ['./sidebar.component.scss']
 })
-export class SidebarComponent {
+export class SidebarComponent  implements OnInit{
   @Input()
   condicion: boolean;
   alertas: Alerta[];
@@ -17,9 +17,12 @@ export class SidebarComponent {
 
   constructor(private alertaService: AlertasService) {
 
-    this.alertas = this.alertaService.iniciarArray();
+
     this.alertaspadre = new EventEmitter<Alerta[]>();
 
+  }
+  ngOnInit():void {
+    this.alertas = this.alertaService.iniciarArray();
     this.alertaService.cargarDatos().subscribe(arrayActualizado => {
       this.alertas = arrayActualizado;
       this.emitiralertas(arrayActualizado);
