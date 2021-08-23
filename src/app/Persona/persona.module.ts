@@ -1,14 +1,28 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 import { PersonaRoutingModule } from './persona-routing.module';
+import {FormPersonaComponent} from "./infrastucture/form-persona/form-persona.component";
+import {ListarComponent} from "./infrastucture/listar/listar.component";
+import {PersonaNavBarComponent} from "./infrastucture/persona-nav-bar/persona-nav-bar.component";
+import {PrincipalPersonaComponent} from "./infrastucture/principal-persona/principal-persona.component";
+import {TarjetaPersonaComponent} from "./infrastucture/tarjeta-persona/tarjeta-persona.component";
+import {MaterialesModule} from "../general/materiales.module";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    FormPersonaComponent,
+    ListarComponent,
+    PersonaNavBarComponent,
+    PrincipalPersonaComponent,
+    TarjetaPersonaComponent
+  ],
   imports: [
-    CommonModule,
-    PersonaRoutingModule
+    PersonaRoutingModule,
+    MaterialesModule
+
+
   ]
 })
 export class PersonaModule { }
