@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PersonaDTO} from 'src/app/Persona/model/PersonaDTO';
 import {PersonaOutput} from 'src/app/Persona/model/PersonaDTOOutput';
@@ -79,18 +79,20 @@ export class FormPersonaComponent implements OnInit {
   }
 
   public iniciarForm(): FormGroup {
-    return this.personaForm = this.formBuilder.group({
-      'id': [''],
-      'user': [''],
-      'password': [''],
-      'surname': [''],
-      'company_email': [''],
-      'personal_email': [''],
-      'city': [''],
-      'imagen_url': [''],
-      'active': [false],
-      'created_Date': ['']
-    });
+    return new FormGroup({
+      id: new FormControl(''),
+      user: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(15),
+        Validators.pattern("(?!^[0-9]*$)(?!^[a-zA-Z]*$)^([a-zA-Z0-9]{8,10})$")]),
+      name: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+      surname: new FormControl('', [Validators.required, Validators.maxLength(15)]),
+      company_email: new FormControl('', [Validators.required, Validators.minLength(7), Validators.pattern("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$")]),
+      personal_email: new FormControl('', [Validators.required, Validators.minLength(7), Validators.pattern("^\\w+@[a-zA-Z_]+?\\.[a-zA-Z]{2,3}$")]),
+      city: new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(15)]),
+      active: new FormControl(false),
+      imagen_url: new FormControl(''),
+      created_Date: new FormControl('', [Validators.required]),
+    })
   }
 
   public imagenpordefecto(comprobar: PersonaOutput): PersonaOutput {

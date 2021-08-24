@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {MatDialog,MatDialogConfig} from "@angular/material/dialog";
 import {ErrorComponent} from "../infrastructure/error.component";
-import {config} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'

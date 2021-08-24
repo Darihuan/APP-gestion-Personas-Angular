@@ -1,9 +1,9 @@
-import {ActivatedRoute, ActivatedRouteSnapshot, Resolve} from "@angular/router";
+import { ActivatedRouteSnapshot, Resolve} from "@angular/router";
 import {Observable, of} from "rxjs";
 import {Injectable} from "@angular/core";
 import {EstudiantesService} from "../services/estudiantes.service";
 import {EstudianteOutput} from "../../model/EstudianteOutput";
-import {delay} from "rxjs/operators";
+
 
 @Injectable({
   providedIn: "root"

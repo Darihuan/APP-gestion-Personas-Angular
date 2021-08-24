@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MatDialogRef} from "@angular/material/dialog";
-import {CargaService} from "../aplication/carga.service";
+
 
 @Component({
   selector: 'app-carga',

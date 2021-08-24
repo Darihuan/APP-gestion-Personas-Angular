@@ -6,8 +6,11 @@ export class GlobalErrorHandler implements ErrorHandler{
   constructor(private errordialog:ErrorService,private zone:NgZone) {
   }
 public handleError(error: Error) {
-  this.zone.run(()=>
-  this.errordialog.lanzarerror(error));
+  this.zone.run(()=>{
+    this.errordialog.lanzarerror(error);
+  console.log(error);
+  })
+
 }
 
 }
