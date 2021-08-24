@@ -9,6 +9,8 @@ import {ListarComponent} from "./infrastucture/listar/listar.component";
 import {NavbarEstudianteComponent} from "../Estudiante/infrastucture/navbarEstudiante/navbar-estudiante.component";
 import {PrincipalEstudianteComponent} from "../Estudiante/infrastucture/principalEstudiante/principal.component";
 import {ListComponent} from "../Estudiante/infrastucture/list/list.component";
+import {PersonaResolver} from "./aplication/resolvers/persona.resolver";
+import {PersonaIdResolver} from "./aplication/resolvers/personaId.resolver";
 
 const routes: Routes = [
   {
@@ -16,8 +18,12 @@ const routes: Routes = [
     path: "personas", component: PersonaNavBarComponent, children: [
       {path: "home", component: PrincipalPersonaComponent},
       {path: "crear", component: FormPersonaComponent},
-      {path: "actualizar/:id", component: FormPersonaComponent},
-      {path: "list", component: ListarComponent}
+      {path: "actualizar/:id", component: FormPersonaComponent,resolve:{
+        persona:PersonaIdResolver
+        }},
+      {path: "list", component: ListarComponent,resolve:{
+        personas:PersonaResolver
+      }}
     ]
 
   }

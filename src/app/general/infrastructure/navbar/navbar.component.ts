@@ -1,7 +1,7 @@
 import {Component, EventEmitter, OnInit} from '@angular/core';
 import {Alerta} from 'src/app/general/model/Alerta';
-import {PersonaService} from 'src/app/Persona/aplication/persona.service';
-import {AlertasService} from "../../aplication/alertas/alertas.service";
+import {PersonaService} from 'src/app/Persona/aplication/services/persona.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -26,6 +26,7 @@ export class NavbarComponent implements OnInit {
   contadoralertas(alerta: Alerta[]): void {
     this.alertas = alerta;
   }
+
 }
 
 

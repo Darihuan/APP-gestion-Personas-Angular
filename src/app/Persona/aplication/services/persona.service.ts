@@ -2,9 +2,9 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 import {Observable} from 'rxjs';
-import {PersonaDTO} from 'src/app/Persona/model/PersonaDTO';
 import {PersonaOutput} from 'src/app/Persona/model/PersonaDTOOutput';
-
+import {environment} from "../../../../environments/environment";
+import {delay} from "rxjs/operators";
 @Injectable({
   providedIn: 'root'
 })
@@ -15,7 +15,7 @@ export class PersonaService {
 
 
   constructor(private http: HttpClient, private router: Router) {
-    this.apiUrl = "http://localhost:3000/personas/";
+    this.apiUrl = environment.api+"/personas/";
   }
 
 

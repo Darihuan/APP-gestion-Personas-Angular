@@ -1,14 +1,15 @@
 import {Component, OnInit} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {EstudianteOutput} from "../../model/EstudianteOutput";
-import {EstudiantesService} from "../../aplication/estudiantes.service";
+import {EstudiantesService} from "../../aplication/services/estudiantes.service";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {FormularioComponent} from "../formulario/formulario.component";
 import {DetallesComponent} from "../detalles/detalles.component";
-import {AlertasService} from "../../../general/aplication/alertas/alertas.service";
-import {ServicioDatosService} from "../../aplication/servicio-datos.service";
-import {DataSource} from "@angular/cdk/collections";
-import {calcPossibleSecurityContexts} from "@angular/compiler/src/template_parser/binding_parser";
+import {AlertasService} from "../../../general/aplication/services/alertas.service";
+import {ServicioDatosService} from "../../aplication/services/servicio-datos.service";
+import {ActivatedRoute} from "@angular/router";
+import {ConfirmarBorrarService} from "../../../compartido/confirmacion-eliminar/aplication/confirmar-borrar.service";
+import {ConfirmacionEliminarComponent} from "../../../compartido/confirmacion-eliminar/infrastructure/confirmacion-eliminar.component";
 
 
 @Component({
@@ -20,12 +21,13 @@ import {calcPossibleSecurityContexts} from "@angular/compiler/src/template_parse
 
 export class ListComponent implements OnInit {
 
-  public displayedColumns: string[] = ['id', 'name', 'company_email', 'surname', 'id_profesor', 'branch', 'num_hours_week', 'acciones'];
+  public displayedColumns: string[] = ['id', 'name', 'surname','num_hours_week','company_email', 'id_profesor', 'branch', 'acciones'];
   public dataSource: MatTableDataSource<EstudianteOutput>;
   public estudiantes: EstudianteOutput[] = [];
 
   constructor(private estudianteService: EstudiantesService, private dialog: MatDialog,
-              private alertService: AlertasService, private datosService: ServicioDatosService) {
+              private alertService: AlertasService, private datosService: ServicioDatosService,private rutaActiva:ActivatedRoute
+  ,private confirmarBorrar:ConfirmarBorrarService) {
 
     this.dataSource = new MatTableDataSource(this.estudiantes);
 
@@ -33,8 +35,10 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.cargardatos();
-    this.datosService.datosactualizados();
+    this.datosactualizados();
+
   }
 
 
@@ -45,13 +49,20 @@ export class ListComponent implements OnInit {
   }
 
   public deleteEstudiante(alumno): void {
+let confirmar=false;
+   this.confirmarBorrar.confirmardialog.open(ConfirmacionEliminarComponent).afterClosed().subscribe(confirmar=>{
 
-    this.estudianteService.deleteEstudiante(alumno.id).subscribe(() => {
-        this.dataSource.data = this.dataSource.data.filter(estudiantes => estudiantes != alumno);
+     if(confirmar)
+       this.estudianteService.deleteEstudiante(alumno.id).subscribe(() => {
+           this.dataSource.data = this.dataSource.data.filter(estudiantes => estudiantes != alumno);
+           this.alertService.crearAlerta(alumno.id, "borrado", "Estudiante");
+         }
+       );
 
-        this.alertService.crearAlerta(alumno.id, "borrado", "Estudiante");
-      }
-    );
+   }
+);
+
+
 
   }
 
@@ -81,4 +92,13 @@ export class ListComponent implements OnInit {
       },
       err => console.error(err));
   }
+
+  public datosactualizados(): void {
+
+      this.estudiantes =this.rutaActiva.snapshot.data.estudiantes;
+      this.datosService.getEmiterEstudiantes().emit(this.estudiantes);
+    }
+
+
+
 }

@@ -1,12 +1,12 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {EstudiantesService} from "../../aplication/estudiantes.service";
+import {EstudiantesService} from "../../aplication/services/estudiantes.service";
 import {EstudianteOutput} from "../../model/EstudianteOutput";
 import {MatDialogRef} from "@angular/material/dialog";
 import {MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {AlertasService} from "../../../general/aplication/alertas/alertas.service";
+import {AlertasService} from "../../../general/aplication/services/alertas.service";
 import {PersonaDTO} from "../../../Persona/model/PersonaDTO";
-import {ServicioDatosService} from "../../aplication/servicio-datos.service";
+import {ServicioDatosService} from "../../aplication/services/servicio-datos.service";
 
 @Component({
   selector: 'app-formulario',

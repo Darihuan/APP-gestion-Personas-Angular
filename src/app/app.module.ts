@@ -7,37 +7,27 @@ import {AppComponent} from './app.component';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 
-/*componentes*/
-
-import {NavbarComponent} from './general/infrastructure/navbar/navbar.component';
-import {PrincipalComponent} from './general/infrastructure/principal/principal.component';
-import {SidebarComponent} from './general/infrastructure/sidebar/sidebar.component';
-import {AlertCardComponent} from './general/infrastructure/alert-card/alert-card.component';
-
-
-
 /*modulos*/
 
 import { PersonaModule } from './Persona/persona.module';
 import { EstudianteModule } from './Estudiante/estudiante.module';
-import { MaterialesModule } from './general/materiales.module';
+import { MaterialesModule } from './compartido/materiales.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-
-
-
+import {GeneralModule} from "./general/general.module";
+import { ErrorComponent } from './compartido/error/infrastructure/error.component';
+import {ErrorHandlerModule} from "./core/errors/error-handling.module";
+import { CargaComponent } from './compartido/carga/infrasturcture/carga.component';
+import {CompartidosModule} from "./compartido/compartidos.module";
 
 
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PrincipalComponent,
-    NavbarComponent,
-    SidebarComponent,
-    AlertCardComponent,
+    AppComponent
 
   ],
   imports: [
+
     CommonModule,
     BrowserModule,
     AppRoutingModule,
@@ -45,9 +35,14 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     RouterModule,
     BrowserAnimationsModule,
     /*modulos personalizados*/
+    GeneralModule,
     PersonaModule,
     EstudianteModule,
-    MaterialesModule
+    ErrorHandlerModule,
+    MaterialesModule,
+    CompartidosModule
+
+
 
 
   ],

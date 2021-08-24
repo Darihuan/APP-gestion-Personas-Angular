@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {PersonaOutput} from '../../model/PersonaDTOOutput';
-import {Router} from '@angular/router';
-import {PersonaService} from 'src/app/Persona/aplication/persona.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {PersonaService} from 'src/app/Persona/aplication/services/persona.service';
 import {PersonaDTO} from 'src/app/Persona/model/PersonaDTO';
 
 
@@ -15,7 +15,7 @@ export class ListarComponent implements OnInit {
   /*variables*/
   public personas: PersonaOutput[];
 
-  constructor(private service: PersonaService, public router: Router) {
+  constructor(private service: PersonaService, public router: Router,private rutaActiva:ActivatedRoute) {
     this.personas = [];
   }
 
@@ -32,7 +32,7 @@ export class ListarComponent implements OnInit {
   }
 
   private getPersonas(): void {
-    this.service.getPersonas().subscribe(personaServer => this.personas = personaServer, err => console.log(err));
+    this.personas=this.rutaActiva.snapshot.data.personas;
   }
 
 

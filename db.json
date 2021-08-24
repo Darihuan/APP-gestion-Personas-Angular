@@ -1,18 +1,6 @@
 {
   "personas": [
     {
-      "id": 1,
-      "user": "darihuan",
-      "password": "2242334",
-      "surname": "Mesa Arango",
-      "company_email": "damesamarin@gmail.com",
-      "personal_email": "damesamarin@gmail.com",
-      "city": "Logroño",
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/577.jpeg",
-      "active": true,
-      "created_Date": ""
-    },
-    {
       "id": 2,
       "user": "Persona2",
       "password": "54321",
@@ -34,66 +22,10 @@
       "city": "Logroño",
       "imagen_url": "https://rickandmortyapi.com/api/character/avatar/111.jpeg",
       "active": false,
-      "created_Date": ""
-    },
-    {
-      "id": 6,
-      "user": "",
-      "password": "",
-      "surname": "",
-      "company_email": "",
-      "personal_email": "",
-      "city": "",
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/391.jpeg",
-      "active": false,
-      "created_Date": ""
-    },
-    {
-      "id": 7,
-      "user": "",
-      "password": "",
-      "surname": "",
-      "company_email": "",
-      "personal_email": "",
-      "city": "",
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/166.jpeg",
-      "active": false,
-      "created_Date": ""
+      "created_Date": "2021-08-11"
     }
   ],
   "estudiantes": [
-    {
-      "id": 1,
-      "user": "Cristina",
-      "password": "23123112",
-      "name": "Cristina",
-      "surname": "Martínez",
-      "company_email": "BBBBBBBB@gmail.com",
-      "personal_email": "AAAAAAAAA@gmail.com",
-      "city": "Madrid",
-      "active": false,
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/453.jpeg",
-      "created_date": "",
-      "num_hours_week": 45,
-      "id_profesor": 2,
-      "branch": "FrontEnd"
-    },
-    {
-      "id": 2,
-      "user": "Pablo",
-      "password": "12312413",
-      "name": "Pablo",
-      "surname": "de Ejemplo",
-      "company_email": "ejemplo@gmail..com",
-      "personal_email": "personal@gmail.com",
-      "city": "Lilliput",
-      "active": false,
-      "imagen_url": "https://rickandmortyapi.com/api/character/avatar/158.jpeg",
-      "created_date": "2021-08-21",
-      "num_hours_week": 12,
-      "id_profesor": 0,
-      "branch": "FullStack"
-    },
     {
       "id": 3,
       "user": "SuperProgramador",

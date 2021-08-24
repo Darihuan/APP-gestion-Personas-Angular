@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
-import {EstudianteOutput} from "../model/EstudianteOutput";
+import {EstudianteOutput} from "../../model/EstudianteOutput";
+import {environment} from "../../../../environments/environment";
 
 
 @Injectable({
@@ -10,7 +11,7 @@ import {EstudianteOutput} from "../model/EstudianteOutput";
 
 export class EstudiantesService {
 
-  private readonly apiUrl: string = "http://localhost:3000/estudiantes/";
+  private readonly apiUrl: string = environment.api+"/estudiantes/";
 
   constructor(private httpClient: HttpClient) {
   }

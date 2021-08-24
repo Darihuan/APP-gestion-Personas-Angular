@@ -3,8 +3,10 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {PersonaDTO} from 'src/app/Persona/model/PersonaDTO';
 import {PersonaOutput} from 'src/app/Persona/model/PersonaDTOOutput';
-import {PersonaService} from 'src/app/Persona/aplication/persona.service';
-import {AlertasService} from "../../../general/aplication/alertas/alertas.service";
+import {PersonaService} from 'src/app/Persona/aplication/services/persona.service';
+import {AlertasService} from "../../../general/aplication/services/alertas.service";
+import {ConfirmarBorrarService} from "../../../compartido/confirmacion-eliminar/aplication/confirmar-borrar.service";
+import {ConfirmacionEliminarComponent} from "../../../compartido/confirmacion-eliminar/infrastructure/confirmacion-eliminar.component";
 
 
 @Component({
@@ -20,14 +22,16 @@ export class FormPersonaComponent implements OnInit {
 
 
   constructor(private formBuilder: FormBuilder, private service: PersonaService, public router: Router,
-              private rutaActiva: ActivatedRoute, private alertaService: AlertasService) {
+              private rutaActiva: ActivatedRoute, private alertaService: AlertasService,
+              private borrarDialog: ConfirmarBorrarService) {
     this.crearPersona = true;
 
   }
 
   ngOnInit(): void {
-      this.cargarpersona(this.rutaActiva.snapshot.params.id);
     this.personaForm = this.iniciarForm();
+    if (this.rutaActiva.snapshot.data.persona != undefined)
+      this.cargarPersonaActualizar();
   }
 
 
@@ -42,7 +46,7 @@ export class FormPersonaComponent implements OnInit {
     this.service.crearPersona(persona).subscribe((personacreada) => {
       this.alertaService.crearAlerta(personacreada.id, "creado", "Persona");
       this.router.navigate(['personas/list']);
-    },err=>console.error(err));
+    }, err => console.error(err));
 
   }
 
@@ -51,17 +55,26 @@ export class FormPersonaComponent implements OnInit {
     let persona: PersonaOutput = this.personaForm.value;
     persona = this.imagenpordefecto(persona);
 
-    this.service.actualizar(persona).subscribe(actualizar => this.alertaService.crearAlerta(actualizar.id, "Actualizado", "Persona"),err=>console.error(err));
+    this.service.actualizar(persona).subscribe(actualizar => this.alertaService.crearAlerta(actualizar.id, "Actualizado", "Persona"), err => console.error(err));
     this.router.navigate(['personas/list'])
 
 
   }
 
-  public delete(persona: PersonaDTO): void {
-    let id: number = persona.id;
-    this.service.borrarPersona(persona.id).subscribe(persona => this.alertaService.crearAlerta(id, "borrado", "Persona"),err=>console.error(err))
-      .add(() => this.router.navigate(['/list']))
-      .unsubscribe();
+  public delete(): void {
+    let id: number = this.personaForm.value.id;
+    this.borrarDialog.confirmardialog.open(ConfirmacionEliminarComponent).afterClosed().subscribe(
+      confimar => {
+        if (confimar) {
+          this.service.borrarPersona(id).subscribe(() => {
+            this.alertaService.crearAlerta(id, "borrado", "Persona");
+            this.router.navigate(['personas/list']);
+          })
+
+        }
+      }
+    )
+
 
   }
 
@@ -93,14 +106,10 @@ export class FormPersonaComponent implements OnInit {
 
   }
 
-  public cargarpersona(id: number): void {
 
-    this.service.getPersonasById(this.rutaActiva.snapshot.params.id).subscribe(persona => {
-      this.personaForm.patchValue(persona);
-      this.crearPersona = !this.crearPersona;
+  private cargarPersonaActualizar() {
 
-    },err=>console.log("formulario en modo crear"));
+    this.crearPersona = !this.crearPersona;
+    this.personaForm.patchValue(this.rutaActiva.snapshot.data.persona);
   }
-
-
 }

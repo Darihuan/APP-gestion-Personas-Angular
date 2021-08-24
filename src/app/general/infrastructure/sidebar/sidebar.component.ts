@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Alerta} from "../../model/Alerta";
-import {AlertasService} from "../../aplication/alertas/alertas.service";
+import {AlertasService} from "../../aplication/services/alertas.service";
 
 @Component({
   selector: 'app-sidebar',

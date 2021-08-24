@@ -9,13 +9,16 @@ import {ListarComponent} from "../Persona/infrastucture/listar/listar.component"
 import {NavbarEstudianteComponent} from "./infrastucture/navbarEstudiante/navbar-estudiante.component";
 import {PrincipalEstudianteComponent} from "./infrastucture/principalEstudiante/principal.component";
 import {ListComponent} from "./infrastucture/list/list.component";
+import {EstudiantesResolver} from "./aplication/resolvers/estudiantes.resolver";
 
 const estudianteRoutes: Routes = [
   {
     path: "estudiantes", component: NavbarEstudianteComponent,
     children: [
       {path: "home", component: PrincipalEstudianteComponent},
-      {path: "list", component: ListComponent }
+      {path: "list", component: ListComponent,resolve:{
+        estudiantes:EstudiantesResolver
+        }}
     ]
   }
 

@@ -6,7 +6,6 @@
         <a class="titulo" [routerLink]="['/']">CRUD PERSONAS</a>
         <a mat-raised-button color="primary" [routerLink]="['personas/home']" [routerLinkActive]="['activo']" class="rutas">Area Personas</a>
         <a mat-raised-button color="primary" [routerLink]="['estudiantes/home']"  [routerLinkActive]="['activo']" class="rutas">Area Estudiantes</a>
-
       </div>
       <div>
         <mat-icon matBadge={{this.alertas.length}} matBadgeColor="warn" class="icono" (click)="condicion=!condicion">chat_bubble_outline</mat-icon>

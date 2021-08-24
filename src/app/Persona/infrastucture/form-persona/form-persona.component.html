@@ -1,7 +1,7 @@
 <div class="general">
   <div class="contenedor">
 
-    <form id="formulario" (submit)="submit()" [formGroup]="personaForm">
+    <form id="formulario"  [formGroup]="personaForm">
       <div>
         <h1 class="botones">{{crearPersona ? "Crear Persona" : "Actualizar Datos Persona:"}}</h1>
       </div>
@@ -64,13 +64,12 @@
 
         <input class="formulario" type="date" id="created_Date" required formControlName="created_Date">
       </div>
-      <button *ngIf="crearPersona else actualizar" class="boton" type="submit">Enviar</button>
+      <button *ngIf="crearPersona else actualizar" class="boton" (click)="submit()">Enviar</button>
 
       <ng-template #actualizar>
         <div class="botones">
           <button  mat-stroked-button (click)="update()">Actualizar</button>
-          <button  mat-stroked-button color="warn" (click)="delete(personaActualizar)">borrar
-          </button>
+          <button  mat-stroked-button color="warn" (click)="delete()">borrar</button>
         </div>
       </ng-template>
     </form>
