@@ -14,9 +14,7 @@ import { EstudianteModule } from './Estudiante/estudiante.module';
 import { MaterialesModule } from './compartido/materiales.module';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {GeneralModule} from "./general/general.module";
-import { ErrorComponent } from './compartido/error/infrastructure/error.component';
 import {ErrorHandlerModule} from "./core/errors/error-handling.module";
-import { CargaComponent } from './compartido/carga/infrasturcture/carga.component';
 import {CompartidosModule} from "./compartido/compartidos.module";
 
 

@@ -38,16 +38,17 @@ export class FormPersonaComponent implements OnInit {
   /*metodos*/
 
   public submit(): void {
+    if (this.personaForm.valid) {
 
-    let persona: PersonaOutput = this.personaForm.value;
+      let persona: PersonaOutput = this.personaForm.value;
 
-    persona = this.imagenpordefecto(persona);
+      persona = this.imagenpordefecto(persona);
 
-    this.service.crearPersona(persona).subscribe((personacreada) => {
-      this.alertaService.crearAlerta(personacreada.id, "creado", "Persona");
-      this.router.navigate(['personas/list']);
-    }, err => console.error(err));
-
+      this.service.crearPersona(persona).subscribe((personacreada) => {
+        this.alertaService.crearAlerta(personacreada.id, "creado", "Persona");
+        this.router.navigate(['personas/list']);
+      }, err => console.error(err));
+    }
   }
 
   public update(): void {
